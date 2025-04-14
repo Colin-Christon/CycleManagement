@@ -1,0 +1,80 @@
+<div class="payment-method-container">
+    <div class="cycle-desc-back" (click)="goBack()">
+        <img src="/assets/employee-icons/back.png" alt="">
+        <h1>Back</h1>
+
+        <h1 class="checkout-title"> Checkout</h1>
+    </div>
+
+    <div class="payment-method-body">
+        <div class="payment-body-delivery">
+            <div class="title">
+                <h2>1. Delivery Required</h2>
+            </div>
+            <div class="delivery-options">
+                <button [class.selected]="selectedOption === 'no'" (click)="setOption('no')">No</button>
+                <button [class.selected]="selectedOption === 'yes'" (click)="setOption('yes')">Yes</button>
+            </div>
+            <div class="delivery-address">
+                <div>{{this.customer?.address}}</div>
+                <button> Change</button>
+            </div>
+        </div>
+
+        <div class="payment-method">
+            <div> 
+                <div class="title">
+                    <h2>2. <span> Select a payment method</span></h2>
+                </div>
+                <div class="method-options">
+                    <ul>
+                        <li>
+                            <label>
+                                <input type="radio" name="paymentMethod" value="cash" checked (change)="selectPaymentMethod($event)"> Cash Payment
+                            </label>
+                            <dd>Cash UPI accepted</dd>
+                        </li>
+                        <li>
+                            <label>
+                                <input type="radio" name="paymentMethod" value="qrcode" (change)="selectPaymentMethod($event)"> QR Code UPI Payment
+                            </label>
+                            <dd>Bank *1234</dd>
+                            <dd><span>UPI ID: </span> colindcruz79685&#64;okhdfc</dd>
+                        </li>
+                    </ul>
+                </div>
+                <div class="payment-button" (click)="processPayment()">
+                    <button> Continue Payment </button>
+                </div>
+            </div>
+            <div class="order-summary">
+                <h2> Order Summary</h2>
+                <h4> Choose a payment method to continue checking out</h4>
+                <div>
+                    <h5>Items: </h5>
+                    <h5> $ <span> {{this.productAmount}} </span></h5>
+                </div>
+
+                <div>
+                    <h5>Delivery: </h5>
+                    <h5>$<span> 00</span></h5>
+                </div>
+                <p class="line"></p>
+
+                <div class="order-total">
+                    <h5><span>Order Total: </span></h5>
+                    <h5><span> {{this.productAmount}}</span></h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-overlay" *ngIf="showCashConfirmation">
+            <div class="modal-content">
+              <h2>Confirm Cash Payment</h2>
+              <p>Has the cash payment been received?</p>
+              <button (click)="confirmCashPayment(true)">Yes</button>
+              <button (click)="confirmCashPayment(false)">No</button>
+            </div>
+          </div>
+    </div>
+</div>

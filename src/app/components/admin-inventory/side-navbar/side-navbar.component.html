@@ -1,0 +1,42 @@
+    <div class="admin-navbar">
+        <div class="company-logo">
+          <img src="/assets/logo/logo.png" alt="logo">
+          <h3>Cycles</h3>
+        </div>
+        <div  class="nav-items">
+          <div class="item" routerLink="/admin/dashboard" routerLinkActive="active">
+            <img src="/assets/admin/dashboard-1.png" alt="logo">
+            <h3>Dashboard</h3>
+          </div>
+
+          <div class="item" routerLink="/admin/menu" routerLinkActive="active">
+            <img src="/assets/admin/menu-bar.png" alt="logo">
+            <h3>Menu</h3>
+          </div>
+
+          <div class="item"  routerLink="/admin/inventory" routerLinkActive="active">
+            <img src="/assets/admin/supply.png" alt="logo">
+            <h3>Inventory</h3>
+          </div>
+
+          <div class="item"  routerLink="/admin/staff" routerLinkActive="active">
+            <img src="/assets/admin/group.png" alt="logo">
+            <h3>Staff</h3>
+          </div>
+
+          <div class="item"  routerLink="/admin/orders" routerLinkActive="active">
+            <img src="/assets/admin/order.png" alt="logo">
+            <h3>Orders</h3>
+          </div>
+
+          <div class="item"  routerLink="/admin/reports" routerLinkActive="active">
+            <img src="/assets/admin/report-1.png" alt="logo">
+            <h3>Reports</h3>
+          </div>
+        </div>
+
+        <div class="logout" (click)="logout()">
+            <img src="/assets/admin/power-off.png" alt="">
+            <h1>Logout</h1>
+        </div>
+    </div>

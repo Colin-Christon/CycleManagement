@@ -1,0 +1,169 @@
+.payment-success-container{
+   
+  color: white;
+  display: flex;
+   gap: 50px;
+   margin-top: 50px;
+   font-family: "strait";
+
+   button{
+      font-family: "Strait";
+      font-size: 24px;
+   }
+
+  .container-left{
+   width: 40%;
+    div{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      // font-family: 'strong';
+      h3 {
+         width: 100%;  
+         max-width: 100%;
+         word-wrap: break-word; 
+         text-align: center; 
+         padding: 10px; 
+         font-size: 32px; 
+         line-height: 1.5;
+       }
+       div{
+         h3{
+            font-size: 60px;
+         }
+       }
+
+
+      div{
+         img{
+            width: 350px;
+            height: 350px;
+         }
+      }
+    }
+  }
+
+  .container-right{
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .container-right-1{
+         width: 80%;
+         .container-right-top{
+            display: flex;
+            justify-content: end;
+            color: red;
+            font-size: 18px;
+         }
+     
+
+     .container-right-middle{
+      font-size: 40px;
+        background-color: white;
+        color: black;
+         padding: 20px;
+         border-radius: 20px;
+         // font-family: 'strong';
+
+         h4{
+            color: red;
+         }
+
+        .middle-status{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 50px;
+            height: 50px;
+            div{
+               display: flex;
+               gap: 30px;
+            }
+
+            .status{
+               align-items: center;
+               gap: 20px;
+               font-size: 24px;
+            }
+            img{
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .payment-status{
+         margin-left: 50px;
+            h5{
+               margin-top: -40px;
+            }
+        }
+        .middle-order-status{
+            display: flex;
+            // justify-content: space-between
+            gap: 200px;
+            margin-left: 50px ;
+            margin-top: -50px;
+            h5{
+               margin-top: -40px;
+            }
+        }
+     }
+
+     .container-right-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      gap: 20px;
+         margin-top: 20px;
+        div{
+            button{
+               width: 320px;
+               height: 85px;
+               border-radius: 20px;
+               font-size: 26px;
+            }
+        }
+     }
+
+     .container-next{
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      justify-content: end;
+      font-family: 'wallpoet';
+      font-size: 28px;
+         img{
+            width: 120px;
+            height: 120px;
+         }
+         
+     }
+   }
+  }
+}
+
+@media print {
+   body, html {
+      margin: 0;
+      padding: 0;
+      height: auto;
+    }
+ 
+   #print-section, #print-section * {
+     visibility: visible;
+   }
+ 
+   #print-section {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 100%;
+   }
+ }
+
+ @page {
+   size: 'A4'; 
+   margin: 10mm; 
+ }

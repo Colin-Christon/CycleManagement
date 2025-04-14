@@ -1,0 +1,36 @@
+
+   <div class="login-container">
+      <div class="login-right">
+        <div class="company-logo">
+          <img src="/assets/logo/logo.png" alt="">
+          <h1>cycles</h1>
+        </div>
+
+        <div class="login-content">
+          <div class="login-heading">
+            <h1>Sign In</h1>
+          </div>
+          <div class="login-form">
+            <form [formGroup]="loginForm" (submit)="onSubmit()">
+              <div>
+                <label for="email">Email</label>
+                <input type="text" name="emailId" id="email" formControlName="emailId">
+              </div>
+
+              <div>
+                <label for="password">Password</label>
+                <input type="text" name="password" id="password" formControlName="password">
+              </div>
+              <div class="login-forgot">
+                <h1>Forgot password?</h1>
+              </div>
+
+              <p style="color: red;" *ngIf="this.loginForm.invalid && this.loginForm.get('password')?.touched">* Not a valid form</p>
+              <div class="login-button">
+                <button type="submit">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+   </div>

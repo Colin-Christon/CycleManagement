@@ -1,0 +1,11 @@
+
+.employee-home-container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    .employee-home-body{
+        flex: 1;
+        // overflow: auto;
+        background-color: black;
+    }
+}

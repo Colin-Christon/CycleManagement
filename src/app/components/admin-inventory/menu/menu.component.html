@@ -1,0 +1,120 @@
+
+    <div class="menu">
+        <app-admin-headings></app-admin-headings>
+      
+        <!-- Categories Heading & Add Button -->
+        <div class="categories-header">
+          <h3>Categories</h3>
+          <button class="add-category-btn" routerLink="/admin/addCycleCategory" >+ Add New Category</button>
+        </div>
+      
+        <!-- Category Boxes -->
+        <div class="category-container">
+          <div *ngFor="let category of categories" class="category-box">
+            <div class="category-content">
+              <img src="/assets/icons/cycle1.png" alt="Category Icon" class="category-icon" />
+              <span class="category-name">{{ category.categoryName }}</span>
+              <span class="total-items">{{category.totalItems}}</span>
+              
+              <img
+                *ngIf="category.totalItems === 0"
+                src="/assets/icons/delete.png"
+                alt="Delete"
+                class="delete-category"
+                (click)="deleteCategory(category.categoryId)"
+            />
+            </div>
+          </div>
+        </div>
+
+         <!-- Special menu items -->
+         <div class="special-menu">
+            <h3>Special Menu Items</h3>
+            <div class="special-menu-header">
+                <div class="menu-buttons">
+                <button class="active">Normal Menu</button>
+                <!-- <button>Special Deals</button> -->
+                </div>
+                <button class="add-item-btn" routerLink="/admin/addCycleInventory">+ Add New Cycle Item</button>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search item..." />
+            </div>
+            
+            <!-- Product Table -->
+            <div class="product-table-container">
+                <table class="product-table">
+                <thead>
+                    <tr>
+                    <th>Product Pic</th>
+                    <th>Product Name</th>
+                    <th>Item ID</th>
+                    <th>Stock</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Availability</th>
+                    <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let cycle of cycles">
+                    <td><img [src]="cycle.imageBase64" [alt]="cycle.name" /></td>
+                    <td>{{ cycle.name.toUpperCase() }}</td>
+                    <td>{{ cycle.cycleId.slice(0,5) }}</td>
+                    <td>{{ cycle.stock }}</td>
+                    <td>{{ cycle.categoryName.toUpperCase() }}</td>
+                    <td>${{ cycle.price }}</td>
+                    <td [ngClass]="{'in-stock': cycle.isAvailable , 'out-of-stock': !cycle.isAvailable }">
+                        {{cycle.isAvailable?'Available':'out-of-stock'}}
+                    </td>
+                    <td>
+                      <button class="edit-btn" (click)="openEditModal(cycle)">>
+                        <img src="/assets/icons/edit.png" alt="Edit" />
+                      </button>
+                      <button class="delete-btn" (click)="deleteInventory(cycle.cycleId)">
+                        <img src="/assets/icons/delete.png" alt="Delete" />
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+                </table>
+            </div>
+
+            <div class="modal-overlay" *ngIf="isEditModalOpen">
+              <div class="modal">
+                <h2>Edit Inventory</h2>
+
+                
+                <form [formGroup]="editForm" (ngSubmit)="updateCycle()">
+                  <div>
+                    <img *ngIf="selectedCycle.imageBase64" [src]="selectedCycle.imageBase64" alt="Product Image" class="preview-img" />
+                  </div>
+                  <label>Product Name:</label>
+                  <input type="text" formControlName="name" required />
+            
+                  <label>Stock:</label>
+                  <input type="number" formControlName="stock" required />
+            
+                  <label>Category:</label>
+                  <input type="text" formControlName="categoryName" required />
+            
+                  <label>Price:</label>
+                  <input type="number" formControlName="price" required />
+            
+                  <label>Availability:</label>
+                  <select formControlName="isAvailable">
+                    <option [ngValue]="true">Available</option>
+                    <option [ngValue]="false">Out of Stock</option>
+                  </select>
+            
+                  <div class="modal-buttons">
+                    <button type="submit" class="save-btn">Save</button>
+                    <button type="button" class="cancel-btn" (click)="closeEditModal()">Cancel</button>
+                  </div>
+                  </form>
+                  </div>
+            </div> 
+      </div>
+      

@@ -1,0 +1,72 @@
+
+    <div class="employee-container">
+      <app-admin-headings></app-admin-headings>  
+      <div class="employee-profile">
+        <!-- Left Side: Profile Image & Actions -->
+        <div class="profile-section">
+          <h3>Profile Details</h3>
+          <div class="profile-image">
+            <img [src]="selectedEmployee.profilePic" alt="{{selectedEmployee.name}}" />
+            <button class="change-pic-btn">Change Profile Picture</button>
+          </div>
+          <div class="profile-actions">
+            <button (click)="editProfile(selectedEmployee.id)" class="edit-profile-btn" routerLink="/admin/editEmployee">Edit Profile</button>
+            <button (click)="deleteProfile(selectedEmployee.id)" class="delete-profile-btn">Delete Profile</button>
+          </div>
+        </div>
+      
+        <div class="details-section">
+          <!-- Personal Details -->
+          <div class="personal-details">
+            <h3>Employee Personal Details</h3>
+            <div class="details-container">
+              <div class="detail-item">
+                <label>Full Name:</label>
+                <span>{{selectedEmployee.name}}</span>
+              </div>
+              <div class="detail-item">
+                <label>Email:</label>
+                <span>{{selectedEmployee.email}}</span>
+              </div>
+              <div class="detail-item">
+                <label>Phone Number:</label>
+                <span>{{selectedEmployee.phone}}</span>
+              </div>
+              <div class="detail-item">
+                <label>Date of Birth:</label>
+                <span>{{selectedEmployee.dob}}</span>
+              </div>
+              <div class="detail-item">
+                <label>Address:</label>
+                <span>{{selectedEmployee.address}}</span>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Job Details -->
+          <div class="job-details">
+            <h3>Employee Job Details</h3>
+            <div class="details-container">
+              <div class="detail-item">
+                <label>Role:</label>
+                <span>{{selectedEmployee.role}}</span>
+              </div>
+              <div class="detail-item">
+                <label>Salary:</label>
+                <span>{{selectedEmployee.salary}}</span>
+              </div>
+              <div class="detail-item">
+                <label>Shift Start Timing:</label>
+                <span>{{selectedEmployee.shiftStart}}</span>
+              </div>
+              <div class="detail-item">
+                <label>Shift End Timing:</label>
+                <span>{{selectedEmployee.shiftEnd}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+

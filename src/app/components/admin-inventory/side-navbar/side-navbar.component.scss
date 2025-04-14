@@ -1,0 +1,87 @@
+$font-style : Poppins;
+
+.admin-navbar {
+    width: 250px;
+    height: 96vh;
+    background-color: #1A1818;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    position: relative;
+    top: 0;
+    left: 0px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  
+    .company-logo{
+      height: 14%;
+      margin-top: 10px;
+      display: flex;
+      // justify-content: center;
+      align-items: start;
+      gap: 10px;
+      img{
+        width: 72px;
+        height: 65px;
+      }
+      h3{
+        font-family: 'sarina';
+        font-size: 28px;
+      }
+    }
+
+    .nav-items{
+        .item{
+          height: 8%;
+          margin-top: 15px;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border-radius: 10px;
+          img{
+            width: 65px;
+            height: 65px;
+          }
+          h3{
+            font-family: 'strait';
+            font-size: 24px;
+          }
+
+          &:hover{
+            cursor: pointer;
+          }
+        }
+
+        .active{
+          background-color: red;
+        }
+    }
+
+    .logout{
+      width: 180px;
+      height: 126px;
+      border-radius: 20px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #FD2C2C;
+      
+      &:hover{
+        cursor: pointer;
+      }
+      img{
+        width: 54px;
+        height: 54px;
+      }
+      h1{
+        font-family: 'wallpoet';
+        color: black;
+      }
+    }
+  }
+  

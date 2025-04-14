@@ -1,0 +1,222 @@
+.register-container {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 100vh;
+  
+  background: url('/assets/cycle-bg.png') no-repeat center center/cover;
+
+
+  .register-right{
+    background-color: black;
+    width: 747px;
+    height: 100vh;
+    border-radius: 30px;
+    margin-right: 8px;
+  }
+
+  .company-logo{
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    img{
+      border-radius:50%;
+    }
+    h1{
+      margin-left: 10px;
+      font-family: "Sarina";
+      color: white;
+    }
+  }
+
+  .register-content{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .register-heading{
+      h1{
+        font-size: 60px;
+        font-family: "Wallpoet";
+      }
+    }
+
+    form{
+      margin-top: 20px;
+      .form-div{
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        font-size: 32px;
+        font-family: "strong";
+        margin: 20px;
+        .form-div-content{
+          display: flex;
+          flex-direction: column;
+          margin-top: 10px;
+
+          input{
+            width: 250px;
+            height: 40px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 21px;
+            padding-left: 20px;
+            border: none;
+            outline: none;
+          }
+          select{
+            width: 550px;
+            height: 40px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 21px;
+            padding-left: 20px;
+            border: none;
+            outline: none;
+          }
+
+          #role{
+            color: red;
+          }
+          
+        }
+        .form-radio{
+          width: 100%;
+          .radio-options{
+            margin-top: 10px;
+            font-size: 21px ;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            div{
+              display: flex;
+              align-items: center;
+
+              input[type='radio']{
+                width: 25px;
+                height: 25px;
+                margin-right: 10px;
+              }
+            }
+            
+          }
+        }
+      }
+
+      .form-agree{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding-left: 20px;
+        margin-top: -10px;
+        font-size:22px ;
+
+        input[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+      }
+
+        h5{
+          margin-left: 5px;
+        }
+
+        span{
+          color: red;
+        }
+      }
+
+      .form-register{
+        display: flex;
+        justify-content: center;
+
+        .form-register-btn{
+          button{
+            width: 215px;
+            height: 65px;
+            border-radius: 20px;
+            font-size: 32px ;
+            color: white;
+            border: 2px solid red;
+            background-color: black;
+          }
+        }
+      }
+    }
+  }   
+}
+
+
+
+
+
+// $primary-color: #00796b;
+// $secondary-color: #004d40;
+// $background-color: #f1f8e9;
+// $input-border: #bdbdbd;
+
+// .register-container {
+//   background: $background-color;
+//   width: 100%;
+//   max-width: 400px;
+//   margin: 50px auto;
+//   padding: 40px;
+//   border-radius: 12px;
+//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+//   text-align: center;
+
+//   h2 {
+//     color: $primary-color;
+//     margin-bottom: 20px;
+//     font-family: 'Arial', sans-serif;
+//   }
+
+//   form {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 20px;
+
+//     .form-group {
+//       display: flex;
+//       flex-direction: column;
+//       text-align: left;
+
+//       label {
+//         margin-bottom: 5px;
+//         color: $secondary-color;
+//         font-weight: bold;
+//       }
+
+//       input, select {
+//         padding: 10px;
+//         border: 1px solid $input-border;
+//         border-radius: 8px;
+//         font-size: 14px;
+
+//         &:focus {
+//           outline: none;
+//           border-color: $primary-color;
+//         }
+//       }
+//     }
+
+//     button {
+//       background: $primary-color;
+//       color: white;
+//       border: none;
+//       padding: 10px;
+//       border-radius: 8px;
+//       cursor: pointer;
+//       font-size: 16px;
+//       transition: background 0.3s ease;
+
+//       &:hover {
+//         background: darken($primary-color, 10%);
+//       }
+//     }
+//   }
+// }
+
+

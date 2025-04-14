@@ -1,0 +1,116 @@
+<div class="employee-container">
+
+    <div *ngIf="!isEditing" class="employeee-container">
+        <app-admin-headings></app-admin-headings>  
+        <div class="employee-profile">
+          <div class="profile-section">
+            <h3>Profile Details</h3>
+            <div class="profile-image">
+              <img src="/assets/images/profile.jpg" alt="{{employe?.name}}" />
+              <button class="change-pic-btn">Change Profile Picture</button>
+            </div>
+            <div class="profile-actions">
+              <button (click)="toggleEdit()" class="edit-profile-btn" routerLink="/admin/editEmployee">Edit Profile</button>
+              <button  class="delete-profile-btn">Delete Profile</button>
+            </div>
+          </div>
+        
+          <div class="details-section">
+            <!-- Personal Details -->
+            <div class="personal-details">
+              <h3>Employee Personal Details</h3>
+              <div class="details-container">
+                <div class="detail-item">
+                  <label>Full Name:</label>
+                  <span>{{employe?.name}}</span>
+                </div>
+                <div class="detail-item">
+                  <label>Email:</label>
+                  <span>{{employe?.emailId}}</span>
+                </div>
+                <div class="detail-item">
+                  <label>Phone Number:</label>
+                  <span>{{employe?.phone}}</span>
+                </div>
+                <div class="detail-item">
+                  <label>Gender:</label>
+                  <span>{{employe?.gender}}</span>
+                </div>
+                <div class="detail-item">
+                  <label>Address:</label>
+                  <span>{{employe?.address}}</span>
+                </div>
+              </div>
+            </div>
+        
+            <!-- Job Details -->
+            <div class="job-details">
+              <h3>Employee Job Details</h3>
+              <div class="details-container">
+                <div class="detail-item">
+                  <label>Role:</label>
+                  <span>{{employe?.role}}</span>
+                </div>
+                <div class="detail-item">
+                  <label>Salary:</label>
+                  <span>{{employe?.salary}}</span>
+                </div>
+                <div class="detail-item">
+                  <label>Shift Start Timing:</label>
+                  <span>{{employe?.shiftStartTime}}</span>
+                </div>
+                <div class="detail-item">
+                  <label>Shift End Timing:</label>
+                  <span>{{employe?.shiftEndTime}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="logout" (click)="logout()">
+            <button>
+              LogOut
+            </button>
+          </div>
+        </div>
+        
+      </div>
+
+    <!-- EDIT MODE -->
+    <div *ngIf="isEditing" class="employee-edit">
+        <h2>Edit Employee Details</h2>
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+            <label>Full Name:</label>
+            <input formControlName="name" type="text">
+
+            <label>Email:</label>
+            <input formControlName="emailId" type="email">
+
+            <label>Phone Number:</label>
+            <input formControlName="phone" type="text">
+
+            <!-- <label>Date of Birth:</label>
+            <input formControlName="dob" type="date"> -->
+
+            <label>Address:</label>
+            <input formControlName="address" type="text">
+
+            <h3>Employee Job Details</h3>
+
+            <label>Role:</label>
+            <input formControlName="role" type="text">
+
+            <label>Salary:</label>
+            <input formControlName="salary" type="number">
+
+            <label>Shift Start Timing:</label>
+            <input formControlName="shiftStartTime" type="time">
+
+            <label>Shift End Timing:</label>
+            <input formControlName="shiftEndTime" type="time">
+
+            <button type="submit">Update</button>
+            <button  (click)="toggleEdit()">Cancel</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+
+    <div class="cycle-desc-container">
+        <div class="cycle-desc-back" (click)="goBack()">
+            <img src="/assets/employee-icons/back.png" alt="">
+            <h1>Back</h1>
+        </div>
+        <div class="cycle-desc-content">
+            <div class="cycle-desc-heading">
+                <h1>Ride in style <span>{{this.cycle?.categoryName?.toUpperCase()}}EO</span></h1>
+            </div>
+
+            <div class="cycle-desc-content-body">
+                <img [src]="this.cycle?.imageBase64" [alt]="this.cycle?.name">
+                <div class="cycle-desc-content-right">
+                    <h3>{{this.cycle?.name}}</h3>
+                    <h1>{{this.cycle?.model}}</h1>
+                    <div class="star-rating">
+                        <label for="star5">&#9733;</label>
+                        
+                        <label for="star4">&#9733;</label>
+
+                        <label for="star3">&#9733;</label>
+
+                        <label for="star2">&#9733;</label>
+
+                        <label for="star1">&#9733;</label>
+                        Ratings
+                    </div>
+
+                    <div class="mrp">
+                        <h1>${{this.cycle?.price}}</h1>
+                        <p>(MRP inclusive of all taxes)</p>
+                    </div>
+                    <h4>Color: Yellow and Black combination</h4>
+                    <div class="color">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <button (click)="billCycle(this.cycle!.cycleId)">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="cycle-desc-footer">
+                <div>
+                    <h1>Bike</h1>
+                    <h3>{{this.cycle!.specifications[0].description}}</h3>
+                    <h3>Nylon Tyres</h3>
+                    <h3>Front Suspension</h3>
+                </div>
+
+                <div>
+                    <h1>Wheel Size</h1>
+                    <div>
+                        <h3>{{this.cycle!.specifications[0].wheelSize}}</h3>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>

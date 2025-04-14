@@ -1,0 +1,63 @@
+<!-- <div class="inventory-container">
+    <h2>Cycle Inventory Management</h2>
+  
+    <form [formGroup]="inventoryForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="cycleName">Cycle Name</label>
+        <input type="text" id="cycleName" formControlName="cycleName" placeholder="Enter cycle name" />
+      </div>
+  
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="text" id="brand" formControlName="brand" placeholder="Enter brand" />
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" formControlName="price" placeholder="Enter price" />
+      </div>
+  
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" formControlName="quantity" placeholder="Enter quantity" />
+      </div>
+  
+      <button type="submit">Add Cycle</button>
+    </form>
+  
+    <div class="inventory-list">
+      <h3>Current Inventory</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Cycle Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cycle of cycles">
+            <td>{{ cycle.cycleName }}</td>
+            <td>{{ cycle.brand }}</td>
+            <td>{{ cycle.price }}</td>
+            <td>{{ cycle.quantity }}</td>
+            <td>
+              <button (click)="editCycle(cycle)">Edit</button>
+              <button (click)="deleteCycle(cycle.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div> -->
+  <div class="admin-layout">
+    <app-side-navbar></app-side-navbar>
+    <div class="main-content">
+      <router-outlet></router-outlet> 
+      <!-- <app-dashboard></app-dashboard> -->
+       <!-- <app-menu></app-menu> -->
+        <!-- <app-inventory></app-inventory> -->
+    </div>
+  </div>

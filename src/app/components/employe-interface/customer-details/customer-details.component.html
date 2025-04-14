@@ -1,0 +1,28 @@
+<div class="customer-details-container">
+    <div class="cycle-desc-back" (click)="goBack()">
+        <img src="/assets/employee-icons/back.png" alt="">
+        <h1>Back</h1>
+
+        <h1 class="checkout-title"> Customer Information</h1>
+    </div>
+    <div class="customer-form-section">
+        <div class="customer-form">
+            <h2>Customer Details</h2>
+            <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+                <label for="name">Name</label>
+                <input type="text" id="name" formControlName="customerName" required>
+              
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email">
+              
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" formControlName="phoneNumber" required>
+              
+                <label for="address">Address (Optional)</label>
+                <textarea id="address" formControlName="address"></textarea>
+              
+                <button type="submit">Save Details</button>
+              </form>
+        </div>
+    </div>
+</div>

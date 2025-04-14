@@ -1,0 +1,176 @@
+$container-background : #1a1818;
+
+.dashboard {
+    padding: 20px;
+    color: white;
+    
+
+    .dashboard-body{
+      width: 102%;
+      height: 85vh;
+      margin-top: 20px;
+      background-color:#1A1818 ;
+      border: 2px solid #bdbdbd;
+      border-right: none;
+      border-radius: 20px;
+    }
+    
+    .info-cards{
+      margin-top: 60px;
+      display: flex;
+      justify-content: space-evenly;
+      .info-card{
+        width: 25%;
+        height: 20%;
+        font-family: "strait";
+    
+        background-color: black;
+        border-radius: 20px;
+
+       div{
+        margin-left: 20px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        
+        h1{
+          width: 60%;
+          margin-left: 10px;
+        }
+        img{
+          width: 36px;
+          height: 36px;        
+        }
+
+        h2{
+          span{
+            color: red;
+          }
+        }
+       }
+       h3{
+        height: 40px;
+        color:#C1BABA ;
+        margin-left: 30px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+       }
+      }
+    }
+
+    .dashboard-graphs {
+      height: 300px;
+      margin-left: -100px;
+      margin-top: 50px;
+      display: flex;
+      gap: 20px;
+      // justify-content: space-between;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .chart-box {
+        width: 34%;
+        padding: 20px;
+        background: #020202;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+
+      canvas {
+        height: 230px !important; /* Adjust this as needed */
+      }
+    }
+
+    .popular-cycles{
+      display: flex;
+      align-items: center;
+      gap: 90px;
+      .report-wrapper{
+        height: max-content;
+
+        button{
+          width: 200px;
+          height: 80px;
+          font-family: "strait";
+          color: white;
+          font-size: 28px;
+          background-color: black;
+          border-radius: 10px;
+          border: 2px solid red;
+
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    
+    .popular-container{
+      height: 230px;
+      width: 60%;
+      margin-top: 3%;
+      margin-left: 8%;
+      background-color: black;
+      font-family: "strait";
+
+      h1{
+        padding: 20px;
+        margin: 10px;
+        font-size: 23px;
+      }
+
+      .popular-items{
+        width: 100%;
+        max-height: 130px;
+        overflow-y: auto;
+        .items{
+          width: 90%;
+          height: 60px;
+          margin-left: 50px;
+          margin-bottom: 10px;
+          background-color:#1A1818 ;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+        
+          // justify-content: space-evenly;
+          img{
+            width: 55px;
+            height: 50px;
+          }
+
+          .item-data{
+            width: 70%;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: column;
+       
+
+            div{
+              margin-top: -10px;
+              display: flex;
+              gap: 40px;
+            }
+
+            h3{
+              font-size: 13px;
+            }
+
+            span{
+              color: red;
+            }
+          }
+
+          .item-status{
+            font-size: 13px;
+            span{
+              color: #16F216;
+            }
+          }
+
+
+        }
+      } 
+    } 
+  }
+  

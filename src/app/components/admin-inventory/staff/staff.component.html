@@ -1,0 +1,60 @@
+<div class="staff-container">
+        <app-admin-headings></app-admin-headings>
+        <div class="staff-management">
+            <!-- Header Section -->
+            <div class="staff-header">
+              <h2>Staff Management</h2>
+              <span class="total-staff">Total Staff: 20</span>
+              <div class="staff-actions">
+                <button class="add-staff-btn" routerLink="/register">Add Staff</button>
+                <select class="sort-staff">
+                  <option value="name">Sort by Name</option>
+                  <option value="age">Sort by Age</option>
+                  <option value="salary">Sort by Salary</option>
+                </select>
+              </div>
+            </div>
+          
+            <!-- Toggle Buttons -->
+            <div class="staff-toggle">
+              <button class="active">Staff Management</button>
+              <!-- <button>Attendance</button> -->
+            </div>
+          
+            <!-- Staff Table -->
+            <div class="staff-table-container">
+              <table class="staff-table">
+                <thead>
+                  <tr>
+                    <th>Sl.No</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Salary</th>
+                    <th>Timings</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let staff of staffList,let i= index">
+                    <td>{{i+1}}</td>
+                    <td>{{ staff.userId.slice(0,7) }}</td>
+                    <td>{{ staff.name }}</td>
+                    <td>{{ staff.emailId }}</td>
+                    <td>{{ staff.phone }}</td>
+                    <td>{{ staff.gender }}</td>
+                    <td>${{ staff.salary }}</td>
+                    <td>{{ staff.shiftStartTime }}</td>
+                    <td>
+                      <button  (click)="viewStaff(staff.userId)">👁️</button>
+                      <!-- <button (click)="editStaff(staff.userId)">✏️</button> -->
+                      <button (click)="deleteStaff(staff.userId)">🗑️</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>    
+    </div>

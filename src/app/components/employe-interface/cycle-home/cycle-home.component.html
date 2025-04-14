@@ -1,0 +1,33 @@
+<div class="cycle-home-container">
+    <div class="cycle-category">
+        <li>Mountain</li>
+        <li>Road</li>
+        <li>Kids</li>
+        <li>Electric</li>
+        <li>Active</li>
+    </div>
+
+    <div class="home-image">
+        <img src="/assets/employee-icons/cycleHome.png" alt="">
+    </div>
+
+    <div class='all-cycles'>
+        <h2>All Bicycles</h2>
+        <div *ngFor="let i of cycle ">
+            <div class="ind-cycle" (click)="viewCycleDesc(i.cycleId)" >
+                <img [src]="i.imageBase64" [alt]="i.name">
+
+                <h3>{{i.name}}</h3>
+
+                <h4>${{i.price}}</h4>
+                <div class="cycle-cart">
+                    <img src="/assets/employee-icons/cart.png" alt="">
+                </div>
+            </div>
+           
+        </div>
+        
+        <h2 class="more" routerLink="/employee/allCycles"> See more > </h2>
+    </div>
+    
+</div>

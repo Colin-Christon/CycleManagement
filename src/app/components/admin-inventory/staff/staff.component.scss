@@ -1,0 +1,102 @@
+.staff-container{
+    padding: 10px;
+    color: white;
+    font-family: "strait";
+
+    h2{
+      font-size: 28px;
+    }
+    button{
+      font-family: "Strait";
+      font-size: 24px;
+    }
+    .staff-management {
+        color: #ffffff;
+        background: #121212;
+        padding: 20px;
+      
+        .staff-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      
+          .staff-actions {
+            display: flex;
+            gap: 10px;
+      
+            .add-staff-btn {
+              background: #23f59a;
+              border: none;
+              padding: 8px 12px;
+              border-radius: 8px;
+              cursor: pointer;
+            }
+      
+            .sort-staff {
+              padding: 8px;
+              border-radius: 8px;
+            }
+          }
+        }
+      
+        .staff-toggle {
+          display: flex;
+          gap: 10px;
+          margin: 20px 0;
+      
+          button {
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+      
+            &.active {
+              // background: #23f59a;
+              background-color: black;
+              border: 2px solid red;
+              color: white;
+            }
+          }
+        }
+      
+        .staff-table-container {
+          max-height: 400px;
+          overflow-y: auto;
+      
+          .staff-table {
+            width: 100%;
+            border-collapse: collapse;
+            th{
+              color: white;
+              font-family: 'wallpoet';
+              background-color: red;
+            }
+            th,
+            td {
+              padding: 5px;
+              text-align: left;
+              border-bottom: 1px solid #333;
+              height: 50px;
+            }
+      
+            tr:nth-child(even) {
+              background: #1e1e1e;
+            }
+      
+            tr:nth-child(odd) {
+              background: #252525;
+            }
+      
+            button {
+              background: none;
+              border: none;
+              cursor: pointer;
+              margin: 0 5px;
+            }
+          }
+        }
+      }
+      
+}

@@ -1,0 +1,85 @@
+.category-form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background: #1A1818;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid grey;
+    color: white;
+    font-family: 'strait';
+  
+    h2 {
+      font-family: 'wallpoet';
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: red;
+    }
+  
+    .form-group {
+      margin-bottom: 15px;
+  
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 24px;
+      }
+  
+      input, textarea {
+        width: 90%;
+        height: 20%;
+        padding: 8px;
+        border-radius: 5px;
+        border: none;
+        background: white;
+        color: black;
+        font-size: 18px;
+      }
+  
+      small {
+        color: red;
+        font-size: 14px;
+        margin-top: 6px; /* or whatever spacing you prefer */
+        display: block;
+      }
+    }
+
+    .form-actions{
+      display: flex;
+      gap: 30px;
+    
+  
+    button {
+      width: 40%;
+      padding: 10px;
+      background: rgb(98, 218, 98);
+      // background: #4caf50;
+      border: none;
+      border-radius: 10px;
+      // border: 2px solid red;
+      color: black;
+      font-size: 22px;
+      font-family: 'strait';
+
+      cursor: pointer;
+  
+      &:disabled {
+     
+        cursor: not-allowed;
+        color: white;
+        background: red;
+      }
+  
+      
+    }
+
+    .cancle-btn{
+      color: white;
+      background-color: black;
+      border:  2px solid red;
+    }
+  }
+}
+  

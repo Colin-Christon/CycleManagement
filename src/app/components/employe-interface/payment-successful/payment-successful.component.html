@@ -1,0 +1,69 @@
+<div *ngIf="!viewOrderDetails" class="payment-success-container">
+        <div class="container-left">
+            <div >
+                <div>
+                    <img src="/assets/employee-icons/check.png" alt="">
+                    <h3>Payment Successful</h3>
+                </div>
+                <h3>Payment Successful! Thank you for your purchase.
+                     A confirmation has been sent to your email. Feel free to reach out if you need any assistane.</h3>
+            </div>
+        </div>
+        <div class="container-right">
+
+            <div class="container-right-1">
+                <div class="container-right-top">
+                    28 Feb 2025, 1:19 pm
+                </div>
+                <div class="container-right-middle">
+                    <div class="middle-status">
+                        <div>
+                            <h4>To</h4>
+                            <h5>Colin*hdfbankc</h5>
+                        </div>
+                        <div class="status">
+                            <img src="assets/employee-icons/checked.png" alt="">
+                            completed
+                        </div>
+                        
+                    </div>
+
+                    <div class="payment-status">
+                        <h4>Payment Id</h4>
+                        <h5>#1234</h5>
+                    </div>
+
+                    <div class="middle-order-status">
+                        <div>
+                            <h4>Order Id</h4>
+                            <h5># {{this.orderId}}</h5>
+                        </div>
+                        <div>
+                            <h4>Total Payment</h4>
+                            <h5>{{this.totalAmount}}</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-right-bottom">
+                    <div>
+                        <button (click)="printReceipt()"><img src="" alt="">Print Receipt</button>
+                    </div>
+                    <div>
+                        <button (click)="viewOrder()">Order Details</button>
+                    </div>
+                </div>
+
+                <div class="container-next">
+                    <img src="assets/employee-icons/next.png" alt="">
+                    <h4>Continue Shopping</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="viewOrderDetails" id="print-section">
+        <app-order-receipt [orderData]="selectedOrder" 
+        (closeReceipt)="viewOrderDetails = false"
+        ></app-order-receipt>
+    </div>

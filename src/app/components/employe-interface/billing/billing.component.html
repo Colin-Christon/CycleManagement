@@ -1,0 +1,91 @@
+
+    <div class="billing-container">
+        <div class="billing-container-top">
+            <div class="cycle-desc-back" (click)="goBack()">
+                <img src="/assets/employee-icons/back.png" alt="">
+                <h1>Back</h1>
+            </div>
+
+            <h2>Billing System</h2>
+            <p> 11 March 2025</p>
+        </div>
+        <div class="billing-body">
+            <div class="billing-body-top">
+                <div class="title">
+                    <h1>Emp ID</h1>
+                    <h2> #1234</h2>
+                </div>
+                <h2>Item Details</h2>
+                <div class="title">
+                    <div class="navbar-search">
+                        <img src="/assets/employee-icons/search.png" alt="">
+                        <input type="text" [(ngModel)]="searchQuery" name="search" id="search" placeholder="search" (input)="searchCycle($event)"/>
+                    </div>
+                    <div *ngIf="this.matchResults.length>0" class="search-results"  >
+                        <div *ngFor="let cycle of matchResults" (click)="selectCycle(cycle)" >
+                            <h3 ># {{cycle.cycleId.slice(0,5)}} </h3>
+                            <h3 class="cycle-id">{{cycle.name}}</h3>
+                        </div>
+                        
+                    </div>
+                
+                </div>
+                <div class="amount-title">
+                    <h2>Amount</h2>
+                </div>
+            </div>
+
+            <div class="billing-body-middle">
+                <div class="body-middle-1"  >
+                    <div class="item-data-cover" *ngFor="let cycle of cycles">
+                        <div class="body-item" >
+                            <div class="body-item-inner-cover">
+                                <div class="item-heading">
+                                    <div>
+                                        <h1>{{ cycle.brand }}</h1>
+                                    </div>
+                                    <div>
+                                        <h1>CATEGORY</h1>
+                                    </div>
+                                </div>
+                                <div class="body-item-data">
+                                    <h4>#{{ cycle.cycleId.slice(0,5) }}</h4>
+                                    <h3>{{cycle.name}}</h3>
+                                    <h4>{{cycle.categoryName}}</h4>
+                                    
+                                </div>
+                            </div>  
+                            <div class="quantity">
+                                <img src="/assets/employee-icons/plus.png" alt="" (click)="increaseStock(cycle)">
+                                <h1> {{cycle.stock}} </h1>
+                                <img src="/assets/employee-icons/minus.png" alt="" (click)="decreaseStock(cycle)">
+                            </div>    
+                        </div> 
+                        <button class="remove-item" (click)="removeItem(cycle,cycle.cycleId)"><img src="/assets/employee-icons/close.png" alt=""></button>
+                     
+                    </div>
+                </div>
+
+                <div class="body-middle-2" >
+                    <div class="body-item-price" *ngFor="let cycle of cycles">
+                        <h1> <span>$</span>{{cycle.price}}</h1>
+                    </div>
+                </div>
+            </div>
+
+            <div class="billing-end">
+                <div class="billing-end-1">
+                    <h1>Total</h1>
+                </div>
+                <div class="billing-end-2">
+                    <h1>$ {{totalAmout}}</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="billing-checkout-btn">
+            <label for="phone">Customer Phone Number</label>
+            <input type="text" id="phone" [(ngModel)]="phoneNumber" [placeholder]="phonePlaceholder" required maxlength="10"/>
+            <button (click)="goToCheckout()">Checkout</button>
+        </div>
+    </div>

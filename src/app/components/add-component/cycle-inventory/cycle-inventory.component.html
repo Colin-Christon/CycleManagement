@@ -1,0 +1,90 @@
+<div class="cycle-inventory-container">
+    <app-admin-headings></app-admin-headings>
+    <div class="add-inventory-body">
+        <div class="add-cycle-form-div" >
+            <h2>Add New Cycle </h2>
+            <form [formGroup]="cycleForm" (ngSubmit)="addCycle()">
+                <div class="form-wrapper">
+                    <div class="form-left">
+                        <div class="field">
+                            <label>Product Name:</label>
+                            <input type="text" formControlName="name" placeholder="Enter cycle name" required>
+                        </div>
+                        <div class="field">
+                            <label>Category:</label>
+                            <select formControlName="categoryId" required>
+                                <option *ngFor="let category of categories" [value]="category.categoryId">{{ category.categoryName }}</option>
+                            </select>
+                        </div>
+                        
+                        <div class="field" >
+                            <label>Stock:</label>
+                            <input type="number" formControlName="stock" placeholder="Enter stock count" required>            
+                        </div>
+                        <div class="field">
+                            <label>Availability:</label>
+                            <select formControlName="isAvailable" required>
+                                <option value="true">Available</option>
+                                <option value="false">Out of Stock</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>Product Description:</label>
+                            <input type="text" formControlName="description" placeholder="description" >
+                        </div>
+                        <div class="field">
+                            <label>Tyre Size:</label>
+                            <select formControlName="tyreSize">
+                              <option value="" disabled selected>Select tyre size</option>
+                              <option *ngFor="let size of tyreSizes" [value]="size">{{ size }} inch</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="form-right">
+                        <div class="field">
+                            <label>Brand:</label>
+                            <input type="text" formControlName="brand" placeholder="Enter brand name" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Model:</label>
+                            <input type="text" formControlName="model" placeholder="Enter model name" required>
+                        </div>
+
+                        <div class="field">
+                            <label>Price:</label>
+                            <input type="number" formControlName="price" placeholder="Enter price" required>
+                        </div>
+                        <!-- <div class="field">
+                            <label>Product Image:</label>
+                            <input type="file" (change)="onFileSelected($event)">
+                        </div>  -->
+                        <div class="field">
+
+
+                        <label>Product Image:</label>
+                        <div class="upload-box" (click)="fileInput.click()">
+                            
+                            <img *ngIf="imagePreview; else iconTemplate" [src]="'data:image/png;base64,' + imagePreview" />
+                            
+                            <ng-template #iconTemplate class="upload">
+                                <img src="/assets/icons/up-loading.png" alt="">
+                                <p>Upload Image</p>
+                            </ng-template>
+                        
+                            <input 
+                            type="file" 
+                            #fileInput 
+                            accept="image/png, image/jpeg" 
+                            (change)="onFileSelected($event)" 
+                            hidden 
+                            />
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" [disabled]="this.cycleForm.invalid" >Add Cycle</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,194 @@
+$container-background : #1a1818;
+
+.inventory-container{
+    padding: 20px;
+    color: white;
+    font-family: "strait";
+    
+    button{
+        font-family: 'strait';
+        font-size: 24px;
+    }
+
+    .inventory-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    
+        h2 {
+        font-size: 28px;
+        }
+    
+        .add-inventory-btn {
+        background: #00FF2B;
+        color: black;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+    
+        &:hover {
+            background: #04ee2b;
+        }
+        }
+    }
+    
+    .inventory-content {
+        display: flex;
+        width: 100%;
+        gap: 20px;
+        background: $container-background;
+        border-radius: 20px;
+        border: 2px solid white;
+
+        .inventory-filters {
+        width: 30%;
+       height: 70vh;
+       padding: 30px;
+        .product-status {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+    
+            .status-box {
+            background: black;
+            padding: 10px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            flex: 1;
+            margin: 0 5px;
+    
+            span {
+                font-size: 14px;
+            }
+    
+            p {
+                font-size: 20px;
+                color: red;
+                margin: 5px 0 0;
+            }
+            }
+    
+        }
+    
+        .filters {
+            form{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            
+           
+    
+                label {
+                margin-top: 10px;
+                font-size: 22px;
+                }
+    
+                select,
+                input[type='text'],
+                input[type='number'] {
+                    padding: 8px;
+                    font-size: 20px;
+                    background: #141416;
+                    border: 1px solid #333;
+                    border-radius: 8px;
+                    color: #ffffff;
+                }
+    
+                .price-range {
+                    display: flex;
+                    gap: 10px;
+        
+                    input {
+                        width: 50%;
+                    }
+                }
+    
+                .filter-btn, .clear-btn {
+                    background: rgb(60, 253, 60);
+                    color:black;
+                    padding: 10px;
+                    border: none;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    // transition: border 1s ease-in-out;
+
+                    // &:hover {
+                    //     border: 2px solid red;
+                    // }
+                }
+
+                .clear-btn{
+                    color: white;
+                    background-color: black;
+                    border: 2px solid red;
+                }
+            
+            }
+        }
+    }
+    
+        .inventory-list {
+     
+            width: 70%;
+            height: 70vh;
+            background: $container-background;
+            padding: 20px;
+            border-radius: 12px;
+
+            max-height: 900px; /* Adjust height based on your layout */
+            overflow-y: auto; 
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            
+    
+            th,
+            td {
+            padding: 30px;
+            text-align: left;
+            }
+    
+            th {
+            background: red;
+            position: sticky;
+            }
+    
+            tr:nth-child(even) {
+            background-color: #2a2a2a;
+            }
+    
+            tr:nth-child(odd) {
+            background-color: #1e1e1e;
+            }
+    
+            td img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            }
+
+    
+            .in-stock {
+            color: #2cee32;
+            }
+    
+            .out-of-stock {
+            color: #f44336;
+            }
+    
+            .edit-btn,
+            .delete-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            }
+        }
+        }
+    }
+      
+}

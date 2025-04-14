@@ -1,0 +1,73 @@
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-radius: 10px;
+
+    .cycle-desc-back{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-left: 30px;
+      img{
+          height: max-content;
+      }
+      margin-top: -10px;
+  }
+
+    .header-title{
+      height: 50px;
+    
+     h1{
+        font-family: 'wallpoet';
+        font-size: 40px;
+      }
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .notification {
+        position: relative;
+        margin-right: 10px;
+
+        .icon {
+          height: 39px;
+          width: 39px;
+
+          cursor: pointer;
+        }
+
+        .badge {
+          background: rgb(119, 241, 160);
+          color: white;
+          border-radius: 50%;
+          padding: 3px 7px;
+          font-size: 12px;
+          position: absolute;
+          top: -5px;
+          right: -5px;
+        }
+      }
+
+      .vertical-line {
+        width: 2px;
+        height: 25px;
+        background: #ccc;
+        margin: 0 10px;
+      }
+
+      .profile-pic {
+        width: 63px;
+        height: 63px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }

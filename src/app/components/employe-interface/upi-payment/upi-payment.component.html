@@ -1,0 +1,57 @@
+
+    <div class="upi-container">
+        <div class="container-left">
+            <h1>Complete your payment</h1>
+            <div>
+                <img src="/assets/employee-icons/gpay.jpg" alt="">
+                <h4> Scan to pay with any UPI app</h4>
+                <h2><span>UPI ID: </span> colindcruz12345 &#64; okhdfcbank</h2>
+            </div>
+        </div>
+        <div class="container-right">
+            <div>
+                <div class="container-left-top">
+                        <div>
+                            <h4>Order Id</h4>
+                            <h5>#1234</h5>
+                        </div>
+                        <div>
+                            <h4>Total Payment</h4>
+                            <h5>#1234</h5>
+                        </div>
+                </div>
+                <div class="container-left-bottom">
+                    <h4>Customer Details</h4>
+
+                    <div>
+                        <div>
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" [value]="this.customer?.customerName">
+                        </div>
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" id="email" [value]="this.customer?.email" >
+                        </div>
+                        <div>
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" [value]="this.customer?.phoneNumber">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="payment-status" (click)="getPaymentStatus()">
+                <button > Payment Status </button>
+            </div>
+            <div class="modal-overlay" *ngIf="showUpiConfirmation">
+                <div class="modal-content">
+                  <h2>Confirm Cash Payment</h2>
+                  <p>Has the cash payment been received?</p>
+                  <div class="status-confirmation-button">
+                    <button (click)="confirmCashPayment(true)">Yes</button>
+                    <button (click)="confirmCashPayment(false)">No</button>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>

@@ -1,0 +1,134 @@
+
+    <div class="inventory-container">
+        <app-admin-headings></app-admin-headings>
+            <!-- Header Section -->
+            <div class="inventory-header">
+              <h2>Inventory</h2>
+              <button class="add-inventory-btn" routerLink="/admin/addCycleInventory">+ Add New Inventory</button>
+            </div>
+          
+            <div class="inventory-content">
+             
+              <div class="inventory-filters">
+                <!-- Product Status -->
+                <div class="product-status">
+                  <div class="status-box all">
+                    <span>All</span>
+                    <p>200</p>
+                  </div>
+                  <!-- <div class="status-box popular">
+                    <span>Popular</span>
+                    <p>50</p>
+                  </div> -->
+                  <div class="status-box in-stock">
+                    <span>In Stock</span>
+                    <p>150</p>
+                  </div>
+                  <div class="status-box out-of-stock">
+                    <span>Out of Stock</span>
+                    <p>50</p>
+                  </div>
+                </div>
+          
+                <!-- Filters Section -->
+                <div class="filters">
+                  <!-- <form>
+                    <label for="category">Category:</label>
+                    <select id="category">
+                      <option value="all">All</option>
+                      <option *ngFor="let category of categories" [value] = "category.categoryId"> {{category.categoryName}} </option>
+                     
+                    </select>
+            
+                    <label for="stock">Stock:</label>
+                    <select id="stock">
+                      <option value="all">All</option>
+                      <option value="in-stock">In Stock</option>
+                      <option value="out-of-stock">Out of Stock</option>
+                    </select>
+            
+                    <label>Piece / Item:</label>
+                    <input type="text" placeholder="Enter quantity" />
+            
+                    <label>Price:</label>
+                    <div class="price-range">
+                      <input type="number" placeholder="From Price" />
+                      <input type="number" placeholder="To Price" />
+                    </div>
+            
+                    <button class="filter-btn">Apply Filter</button>
+                </form> -->
+                <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+                  <label for="category">Category:</label>
+                  <select id="category" formControlName="category">
+                    <option value="all">All</option>
+                    <option *ngFor="let category of categories" [value]="category.categoryId">
+                      {{ category.categoryName }}
+                    </option>
+                  </select>
+                
+                  <label for="stock">Stock:</label>
+                  <select id="stock" formControlName="stock">
+                    <option value="all">All</option>
+                    <option value="in-stock">In Stock</option>
+                    <option value="out-of-stock">Out of Stock</option>
+                  </select>
+                
+                  <label>Piece / Item:</label>
+                  <input type="text" placeholder="Enter quantity" formControlName="quantity" />
+                
+                  <label>Price:</label>
+                  <div class="price-range">
+                    <input type="number" placeholder="From Price" formControlName="priceFrom" />
+                    <input type="number" placeholder="To Price" formControlName="priceTo" />
+                  </div>
+                
+                  <button class="filter-btn" type="submit">Apply Filter</button>
+                  <button class="clear-btn" type="button" (click)="clearFilter()">Clear Filter</button>
+                </form>
+                  
+              </div>
+              </div>
+          
+              <!-- Right Section: Product List -->
+              <div class="inventory-list">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product Image</th>
+                      <th>Product Name</th>
+                      <th>Item ID</th>
+                      <th>Stock</th>
+                      <th>Category</th>
+                      <th>Price</th>
+                      <th>Availability</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let cycle of cycles">
+                      <td><img class="cycle-img" [src]="cycle.imageBase64" [alt]="cycle.name" /></td>
+                      <td>{{ cycle.name.toUpperCase() }}</td>
+                      <td>{{ cycle.cycleId.slice(0,5) }}</td>
+                      <td>{{ cycle.stock }}</td>
+                      <td>{{ cycle.categoryName }}</td>
+                      <td>${{ cycle.price }}</td>
+                      <td [ngClass]="{'in-stock': cycle.isAvailable , 'out-of-stock': !cycle.isAvailable }">
+                          {{cycle.isAvailable?'Available':'out-of-stock'}}
+                      </td>
+                      <td>
+                        <!-- <button class="edit-btn" >
+                          <img src="/assets/icons/edit.png" alt="Edit" />
+                        </button> -->
+                        <button class="delete-btn" >
+                          <img src="/assets/icons/delete.png" (click)="deleteInventory(cycle.cycleId)" alt="Delete" />
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          
+    </div>
+

@@ -1,0 +1,111 @@
+   <div class="dashboard">
+        <app-admin-headings></app-admin-headings>
+        <div class="dashboard-body">
+
+          <div class="info-cards">
+            <div class="info-card">
+              <div>
+                <img src="/assets/admin/header/sale-tag.png" alt="">
+                <h1>Sales</h1>
+                <h2> {{this.summary.totalSales}}</h2>
+              </div>
+
+              <h3>{{this.today| date}}</h3>
+            </div>
+
+            <div class="info-card">
+              <div>
+                <img src="/assets/admin/header/increase.png" alt="">
+                <h1>Revenue</h1>
+                <h2><span>$</span>{{this.summary.totalRevenue}}</h2>
+              </div>
+
+              <h3> {{this.today| date}}</h3>
+            </div>
+
+            <div class="info-card">
+              <div>
+                <img src="/assets/admin/header/shopping-bag.png" alt="">
+                <h1>Orders</h1>
+                <h2>{{this.summary.totalOrders}}</h2>
+              </div>
+
+              <h3>{{this.today| date}}</h3>
+            </div>
+          </div>
+          
+          <div class="dashboard-graphs">
+            <div class="chart-box">
+              <h3>Customer Insights</h3>
+              <canvas id="customerBarChart"></canvas>
+            </div>
+            
+            <div class="chart-box">
+              <h3>Sales vs Revenue</h3>
+              <canvas id="salesLineChart"></canvas>
+            </div>
+          </div>
+
+      <div class="popular-cycles"> 
+        <div class="popular-container">
+            <h1>Popular Cycles</h1>
+            <div class="popular-items">
+              <div class="items">
+                <img src="/assets/cycles/cycle.png" alt="">
+                <div class="item-data">
+                  <h3> Cycle name : <span>Hero </span></h3>
+                  <div>
+                    <h3> Model : <span>Hero123 </span></h3>
+                    <h3> Brand : <span>Honda </span></h3>
+                    <h3> Price : <span> $ 1200 </span></h3>
+                  </div>
+                </div>
+
+                <div class="item-status">
+                  <h3> <span>In stock </span></h3>
+                    <h3> Total Sales : <span>400 </span></h3>
+                </div>
+              </div>
+              <div class="items">
+                <img src="/assets/cycles/cycle.png" alt="">
+                <div class="item-data">
+                  <h3> Cycle name : <span>Hero </span></h3>
+                  <div>
+                    <h3> Model : <span>Hero123 </span></h3>
+                    <h3> Brand : <span>Honda </span></h3>
+                    <h3> Price : <span> $ 1200 </span></h3>
+                  </div>
+                </div>
+
+                <div class="item-status">
+                  <h3> <span>In stock </span></h3>
+                    <h3> Total Sales : <span>400 </span></h3>
+                </div>
+              </div>
+
+              <div class="items">
+                <img src="/assets/cycles/cycle.png" alt="">
+                <div class="item-data">
+                  <h3> Cycle name : <span>Hero </span></h3>
+                  <div>
+                    <h3> Model : <span>Hero123 </span></h3>
+                    <h3> Brand : <span>Honda </span></h3>
+                    <h3> Price : <span> $ 1200 </span></h3>
+                  </div>
+                </div>
+
+                <div class="item-status">
+                  <h3> <span>In stock </span></h3>
+                    <h3> Total Sales : <span>400 </span></h3>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="report-wrapper" routerLink="/admin/reports">
+          <button>
+            Get Reports >>
+          </button>
+        </div>
+      </div>
+  </div>
+      

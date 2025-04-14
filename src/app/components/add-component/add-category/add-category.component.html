@@ -1,0 +1,34 @@
+<div class="category-form-container">
+    <h2>Add New Cycle Category</h2>
+    
+    <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+   
+      <div class="form-group">
+        <label for="categoryName">Category Name</label>
+        <input 
+          type="text" 
+          id="categoryName" 
+          formControlName="CategoryName" 
+          placeholder="Enter category name" />
+        <small *ngIf="categoryForm.get('CategoryName')?.invalid && categoryForm.get('CategoryName')?.touched">
+          Category name is required.
+        </small>
+      </div>
+  
+   
+      <div class="form-group">
+        <label for="categoryDescription">Description</label>
+        <textarea 
+          id="categoryDescription" 
+          formControlName="Description" 
+          placeholder="Enter category description"></textarea>
+      </div>
+  
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="categoryForm.invalid" class="add-btn">Add Category</button>
+        <button type="button" (click)="onCancel()" class="cancle-btn">Cancel</button>
+      </div>
+    </form>
+  </div>
+  
