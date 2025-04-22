@@ -13,7 +13,6 @@ export class AuthInterceptor implements HttpInterceptor {
     const authToken = sessionStorage.getItem("authToken")
    
     if (authToken) {
-      
       const authReq = req.clone({
         setHeaders: {
           Authorization: `Bearer ${authToken}`

@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 import { ReportService } from '../../../services/reports/report.service';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -29,7 +30,9 @@ export class ReportsComponent implements OnInit {
 
   
 
-  constructor(private reportService: ReportService) {}
+  constructor(private reportService: ReportService,
+    private http: HttpClient) {
+   }
 
 
   setReport(report: string) {
@@ -225,6 +228,66 @@ export class ReportsComponent implements OnInit {
   //     );
   //     // window.open(pdf.output('bloburl'), '_blank');
   // }
+
+  async generateReportAndSend() {
+    const reportElement = document.getElementById('pdf-report');
+    if (!reportElement) {
+      console.error("PDF report section not found.");
+      return;
+    }
+
+    // Temporarily make it renderable
+    reportElement.style.position = 'absolute';
+    reportElement.style.left = '-9999px';
+    reportElement.style.top = '0';
+    reportElement.style.display = 'block';
+
+    const canvas = await html2canvas(reportElement);
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const imgWidth = 210;
+    const pageHeight = 295;
+    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    let heightLeft = imgHeight;
+    let position = 0;
+
+    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+    heightLeft -= pageHeight;
+
+    while (heightLeft > 0) {
+      position = heightLeft - imgHeight;
+      pdf.addPage();
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+    }
+
+    // Reset display
+    reportElement.style.display = 'none';
+    reportElement.style.position = '';
+    reportElement.style.left = '';
+    reportElement.style.top = '';
+
+    // Convert to Blob
+    const blob = pdf.output('blob');
+
+    // Convert Blob to Base64
+    const base64 = await this.convertToBase64(blob);
+
+    // 📧 Send Email via EmailJS
+    const formData = new FormData();
+    formData.append('file', blob, 'monthly-report.pdf');
+    formData.append('toEmail', 'itscolin.c@gmail.com'); // You can add more form fields as needed
+  
+    // 📤 Send to backend
+    this.http.post('http://localhost:5085/api/Report/send-report', formData).subscribe({
+      
+      error: err => alert('❌ Failed to send email: ' + JSON.stringify(err))
+    });
+
+    // 🗂 Also open the PDF
+    const blobUrl = URL.createObjectURL(blob);
+    window.open(blobUrl, '_blank');
+  }
 
   generateReport() {
     const reportElement = document.getElementById('pdf-report');

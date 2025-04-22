@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule, Location } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Cycle, CycleService } from '../../../services/cycle.service';
+import { Cycle, CycleService } from '../../../services/cycleInventory/cycle.service';
 import { FormsModule } from '@angular/forms';
 import { OrderService } from '../../../services/billing/order.service';
 import { CustomerService } from '../../../services/customer/customer.service';

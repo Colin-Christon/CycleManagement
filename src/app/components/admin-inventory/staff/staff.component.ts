@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AdminHeadingsComponent } from "../admin-headings/admin-headings.component";
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
-import { Employee, EmployeeService } from '../../../services/employee.service';
+import { Employee, EmployeeService } from '../../../services/employees/employee.service';
 
 @Component({
   selector: 'app-staff',
@@ -12,7 +12,9 @@ import { Employee, EmployeeService } from '../../../services/employee.service';
 })
 export class StaffComponent {
   staffList: Employee[] = [];
-  
+  overlayScreen:boolean = false;
+  employeeIdToDelete: string = '';
+
   constructor(private employeeService: EmployeeService,
     private router : Router
   ) {}
@@ -29,19 +31,28 @@ export class StaffComponent {
   }
 
   deleteStaff(id: string) {
-    if (confirm('Are you sure you want to delete this employee?')) {
-      this.employeeService.deleteEmployee(id).subscribe({
-        next:(res)=>{ alert(res.message) }
-      }
-      );
-    }
+    this.employeeIdToDelete = id;
+    this.overlayScreen = true;
+  
   }
 
   viewStaff(userId: string) {
-    this.router.navigate(['/admin/editEmployee', userId]); 
+    this.router.navigate(['/editEmployee', userId]); 
   }
 
   editStaff(id: string) {
     console.log('Editing Employee:', id);
+  }
+
+  confirmDelete(){
+    this.employeeService.deleteEmployee(this.employeeIdToDelete).subscribe({
+          next:(res)=>{ alert(res.message) }
+        });
+        this.overlayScreen = false;
+  }
+
+  cancelDelete(){
+    this.overlayScreen = false;
+    this.employeeIdToDelete = '';
   }
 }

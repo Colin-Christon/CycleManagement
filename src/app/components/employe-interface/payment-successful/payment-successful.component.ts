@@ -3,6 +3,7 @@ import { OrderService } from '../../../services/billing/order.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OrderReceiptComponent } from "../../order-receipt/order-receipt.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment-successful',
@@ -16,7 +17,8 @@ export class PaymentSuccessfulComponent implements OnInit {
   viewOrderDetails = false;
   selectedOrder:any;
   constructor(
-    private orderService: OrderService
+    private orderService: OrderService,
+    private router: Router,
   ){}
 
   ngOnInit(): void {
@@ -40,6 +42,12 @@ export class PaymentSuccessfulComponent implements OnInit {
   }
 
   viewOrder(){
+    console.log(this.selectedOrder);
     this.viewOrderDetails = true;
   }
+
+  continueShopping(){
+    this.router.navigate(['/employee/cycleHome']);
+  }
+
 }

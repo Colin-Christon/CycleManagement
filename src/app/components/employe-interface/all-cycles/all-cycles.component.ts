@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Cycle, CycleService } from '../../../services/cycle.service';
+import { Cycle, CycleService } from '../../../services/cycleInventory/cycle.service';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';

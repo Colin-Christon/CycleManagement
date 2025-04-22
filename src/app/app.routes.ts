@@ -21,7 +21,6 @@ import { AddCategoryComponent } from './components/add-component/add-category/ad
 import { AllCyclesComponent } from './components/employe-interface/all-cycles/all-cycles.component';
 import { PaymentMethodComponent } from './components/employe-interface/payment-method/payment-method.component';
 import { CustomerDetailsComponent } from './components/employe-interface/customer-details/customer-details.component';
-// import { authGuard } from './guards/auth.guard';
 import { AuthGuardService as AuthGuard  } from './services/auth/auth-guard.service';
 
 
@@ -29,7 +28,7 @@ export const routes: Routes = [
     {path:"",redirectTo:'/login',pathMatch:"full"},
     {path:"register",component:UserRegisterComponent},
     {path:"login", component:UserLoginComponent},
-    { path: 'editEmployee/:userId', component: EmployeeDetailsComponent},
+    {path:"editEmployee/:userId", component: EmployeeDetailsComponent},
     {path:"admin",component:AdminInventoryComponent,
         children: [
             { path: 'dashboard', component: DashboardComponent },

@@ -56,5 +56,14 @@
                 </tbody>
               </table>
             </div>
-          </div>    
-    </div>
+        </div>   
+        
+        <div *ngIf="overlayScreen" class="confirmation-dialog">
+          <div class="confirmation-dialog-content">
+            <h2>Are you sure you want to delete this staff member?</h2>
+            <div class="confirmation-buttons">
+              <button (click)="confirmDelete()">Yes</button>
+              <button (click)="cancelDelete()">No</button>
+            </div>
+        </div>
+</div>

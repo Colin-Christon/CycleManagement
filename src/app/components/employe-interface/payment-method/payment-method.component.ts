@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule, Location  } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { OrderService } from '../../../services/billing/order.service';
-import { Cycle } from '../../../services/cycle.service';
+import { Cycle } from '../../../services/cycleInventory/cycle.service';
 import { Customer, CustomerService } from '../../../services/customer/customer.service';
 
 @Component({

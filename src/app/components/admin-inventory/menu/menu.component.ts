@@ -2,8 +2,8 @@ import { CommonModule, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { AdminHeadingsComponent } from "../admin-headings/admin-headings.component";
 import { Router, RouterLink } from '@angular/router';
-import { Category, CategoryService } from '../../../services/category.service';
-import { Cycle ,CycleService } from '../../../services/cycle.service';
+import { Category, CategoryService } from '../../../services/category/category.service';
+import { Cycle ,CycleService } from '../../../services/cycleInventory/cycle.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 

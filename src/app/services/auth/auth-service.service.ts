@@ -1,23 +1,31 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
+import { Observable } from 'rxjs';
 
 enum Role{
   ADMIN = 'admin',
   EMPLOYEE = 'employee'
 }
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthServiceService {
+  private apiUrl = 'http://localhost:5085/api/users'; 
+  
+  constructor(private http: HttpClient) { }
 
-  constructor() { }
+  public login(credentials:any):Observable<any>{
+    return this.http.post(`${this.apiUrl}/login`, credentials);
+  }
+
+  public register(user:any):Observable<any>{
+    return this.http.post(`${this.apiUrl}/register`, user);
+  }
 
   public isAuthenticated():boolean{
     const tokenString = sessionStorage.getItem('user');
     let token = null;
-    console.log(tokenString);
     if (tokenString) {
       try {
         token = JSON.parse(tokenString);

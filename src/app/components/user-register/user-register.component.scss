@@ -6,7 +6,6 @@
   
   background: url('/assets/cycle-bg.png') no-repeat center center/cover;
 
-
   .register-right{
     background-color: black;
     width: 747px;
@@ -55,7 +54,10 @@
           display: flex;
           flex-direction: column;
           margin-top: 10px;
-
+          
+          span{
+            color: red;
+          }
           input{
             width: 250px;
             height: 40px;

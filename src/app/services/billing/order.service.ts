@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Cycle } from '../cycle.service';
+import { Cycle } from '../cycleInventory/cycle.service';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 

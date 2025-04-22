@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
-import { Route, Router, RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, Validators, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthServiceService } from '../../services/auth/auth-service.service';
 
 @Component({
   selector: 'app-user-register',
@@ -9,10 +9,12 @@ import { Route, Router, RouterLink } from '@angular/router';
   templateUrl: './user-register.component.html',
   styleUrl: './user-register.component.scss'
 })
-export class UserRegisterComponent {
-  registrationForm:FormGroup;
+export class UserRegisterComponent implements OnInit {
+  registrationForm!:FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient,private route : Router) {
+  constructor(private fb: FormBuilder, private authService: AuthServiceService,private route : Router) {}
+
+  ngOnInit(): void {
     this.registrationForm = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(50)]],
       email: ['', [Validators.required, Validators.email]],
@@ -21,9 +23,6 @@ export class UserRegisterComponent {
       role: ['Employee', [Validators.required]],
       gender : ['male']
     });
-  }
-  onSubmit2(){
-    console.log(this.registrationForm.get('gender')?.value);
   }
 
   onSubmit() {
@@ -37,26 +36,18 @@ export class UserRegisterComponent {
         gender: this.registrationForm.value.gender
       };
 
-      console.log(user);
-
-      this.http.post('http://localhost:5085/api/users/register', user).subscribe({
+      this.authService.register(user).subscribe({
         next: (res) => {
           alert('User registered successfully!')
-          if(user.role ==="Admin"){
-            this.route.navigate(['/admin/dashboard']);
-          }
-          else{
-            this.route.navigate(['/employee/cycleHome'])
+            this.route.navigate(['/login']);
+        },
+        error: (err: any) => {
+          if (err.status === 409) {
+            alert('User already registered with this email!');
+          } else {
+            alert(err.error?.message || 'Registration failed!');
           }
         }
-          ,
-          error: (err: any) => {
-            if (err.status === 409) {
-              alert('User already registered with this email!');
-            } else {
-              alert(err.error?.message || 'Registration failed!');
-            }
-          }
       });
     } else {
       alert('Please fill the form correctly.');

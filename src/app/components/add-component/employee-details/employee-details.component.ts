@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AdminHeadingsComponent } from "../../admin-inventory/admin-headings/admin-headings.component";
 import { ActivatedRoute, Router } from '@angular/router';
-import { Employee, EmployeeService} from '../../../services/employee.service';
+import { Employee, EmployeeService} from '../../../services/employees/employee.service';
 
 @Component({
   selector: 'app-employee-details',
@@ -54,6 +54,7 @@ export class EmployeeDetailsComponent {
   }
 
   onSubmit() {
+    console.log("clicked");
     if (this.employeeForm.valid) {
       const updatedEmployee = { ...this.employeeForm.value ,
 

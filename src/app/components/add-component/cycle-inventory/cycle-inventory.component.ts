@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { v4 as uuidv4 } from 'uuid';
-import { CategoryService } from '../../../services/category.service';
-import { Cycle, CycleService } from '../../../services/cycle.service';
+import { CategoryService } from '../../../services/category/category.service';
+import { Cycle, CycleService } from '../../../services/cycleInventory/cycle.service';
 import { AdminHeadingsComponent } from "../../admin-inventory/admin-headings/admin-headings.component";
 
 

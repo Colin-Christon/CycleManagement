@@ -13,7 +13,7 @@
 
             <div class="container-right-1">
                 <div class="container-right-top">
-                    28 Feb 2025, 1:19 pm
+                    {{this.selectedOrder.orderDate | date: 'medium'}}
                 </div>
                 <div class="container-right-middle">
                     <div class="middle-status">
@@ -54,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="container-next">
+                <div class="container-next" (click)="continueShopping()">
                     <img src="assets/employee-icons/next.png" alt="">
                     <h4>Continue Shopping</h4>
                 </div>

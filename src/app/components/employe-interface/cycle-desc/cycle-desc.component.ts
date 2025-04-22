@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Cycle, CycleService } from '../../../services/cycle.service';
+import { Cycle, CycleService } from '../../../services/cycleInventory/cycle.service';
 
 @Component({
   selector: 'app-cycle-desc',

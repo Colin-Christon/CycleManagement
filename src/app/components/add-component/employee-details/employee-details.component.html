@@ -10,8 +10,8 @@
               <button class="change-pic-btn">Change Profile Picture</button>
             </div>
             <div class="profile-actions">
-              <button (click)="toggleEdit()" class="edit-profile-btn" routerLink="/admin/editEmployee">Edit Profile</button>
-              <button  class="delete-profile-btn">Delete Profile</button>
+              <button (click)="toggleEdit()" class="edit-profile-btn" >Edit Profile</button>
+              <!-- <button  class="delete-profile-btn">Delete Profile</button> -->
             </div>
           </div>
         
@@ -79,7 +79,7 @@
     <!-- EDIT MODE -->
     <div *ngIf="isEditing" class="employee-edit">
         <h2>Edit Employee Details</h2>
-        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="employeeForm" ((submit))="onSubmit()">
             <label>Full Name:</label>
             <input formControlName="name" type="text">
 
