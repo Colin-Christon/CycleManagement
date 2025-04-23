@@ -38,6 +38,7 @@
   
     <div class="total-amount">
       <h2>Total: {{ totalAmount | currency: 'INR' }}</h2>
+      <button (click)="printOrder()">Print receipt</button>
     </div>
   </div>
   

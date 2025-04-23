@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { OrderService, OrderSummary } from '../../../services/billing/order.service';
 import { OrderReceiptComponent } from "../../order-receipt/order-receipt.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orders',
@@ -22,7 +23,8 @@ export class OrdersComponent implements OnInit {
   filteredOrders = [...this.orders];
 
   constructor(
-    private orderService:OrderService
+    private orderService:OrderService,
+    private router:Router
   ){}
 
 ngOnInit(): void {
@@ -30,7 +32,7 @@ ngOnInit(): void {
     next: (order)=>{
       this.orders = order;
       this.tempOrder = [...this.orders]
-      console.log(this.orders);
+
     },
     error:(err)=> {
       console.log("Error has occured while getting order", err);
@@ -60,8 +62,13 @@ ngOnInit(): void {
   }
 
   viewOrder(order: any) {
+    this.router.navigate(['/admin/tracking',order.orderId]);
+  }
+
+  printOrder(order: any) {
     this.orderService.getOrderItem(order.orderId).subscribe({
       next:(order)=> {
+        console.log(order);
         this.selectedOrder = order;
         this.orderId = this.orderService.getOrderId().slice(0,5)
         this.totalAmount = order.items.reduce((sum: number, item: any) => sum + item.total, 0);

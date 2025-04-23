@@ -1,0 +1,93 @@
+<div class="tracking-container">
+    <app-admin-headings></app-admin-headings>
+
+    <div class="tracking-body">
+        <div class="orderId">
+          <h2>Order ID: <span>{{this.orderId}}</span></h2>
+          <h1>Track ID: <span> {{this.selectedOrder.trackingCode}}</span></h1>
+        </div>
+      
+        <!-- Order Details -->
+        <div class="order-details">
+            <div class="order-date">
+                <h3>Order Date: <span>{{ this.selectedOrder.orderDate| date }}</span></h3>
+            </div>
+            <div class="estimated-date">
+                <img src="/assets/admin/delivery.png" alt="">
+                <h3>Estimated Delivery Date: <span>{{ estimatedDeliveryDate | date }}</span></h3>
+            </div>
+            <div class="tracking-id"></div>
+        </div>
+      
+
+        <div class="progress-track">
+            <ul id="progressbar">
+                <li class="step0 active " id="step1">Order placed</li>
+                <li class="step0 active text-center" id="step2">In Transit</li>
+                <li class="step0 active text-right" id="step3"><span id="three">Out for Delivery</span></li>
+                <li class="step0 text-right" id="step4">Delivered</li>
+            </ul>
+        </div>
+      
+
+        <div class="order-items">
+            <div class="order-item" *ngFor="let item of selectedOrder.items">
+
+                <div class="order-item-img">
+                  <img src="/assets/cycles/cycle.png" alt="">
+                </div>
+              
+                <div class="order-item-details">
+                  <h1>{{ item.productName }}</h1>
+                  <div class="order-item-details-1">
+                    <h3>Cycle modal</h3>
+                    <h3>Tyre Size</h3>
+                    <h3>Cycle Brand</h3>
+                  </div>
+                </div>
+              
+                <div class="amount">
+                  <h2>₹ {{ item.total }}</h2>
+                  <h3>Qty: <span>{{ item.quantity }}</span></h3>
+                </div>
+              
+              </div>
+              
+        </div>
+      
+
+        <div class="order-payment">
+          <div class="order-payment-details">
+            <div>
+                <h2>Payment Method</h2>
+                <h3>Credit Card</h3>
+            </div>
+            <div class="delivery-details">
+                <h2>Delivery </h2>
+                <h3>Address</h3>
+                <h4>
+                    847 Jewess Bridge Apt. 174
+                London, UK
+                474-769-3919
+                </h4>
+            </div>
+          </div>
+
+          <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="order-summary-details">
+                <div class="order-summary-details-1 ">
+                    <h3>Subtotal</h3>
+                    <h3>Shipping</h3>
+                    <h3>Total</h3>
+                </div>
+                <div class="order-summary-details-2">
+                    <h3>$ {{this.totalAmount}}</h3>
+                    <h3>$ 00.00</h3>
+                    <h3>$ {{this.totalAmount}}</h3>
+                </div>
+            </div>
+          </div>
+        </div>
+      
+</div>

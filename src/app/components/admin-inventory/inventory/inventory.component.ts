@@ -18,6 +18,9 @@ export class InventoryComponent {
     tempCycles:Cycle[] = [];
     categories: Category[] = [];
     errorMessage: string = '';
+    totalCycles: number = 0;
+    availableCycles: number = 0;
+    outOfStockCycles: number = 0;
 
     constructor( private categoryService : CategoryService,
         private cycleService : CycleService,
@@ -50,6 +53,10 @@ export class InventoryComponent {
         this.cycleService.getCycles().subscribe({
           next: (data) => {this.cycles = data
             this.tempCycles = [...this.cycles];
+
+            this.totalCycles = this.cycles.length;
+            this.availableCycles = this.cycles.filter(cycle => cycle.stock > 0).length;
+            this.outOfStockCycles = this.totalCycles - this.availableCycles;
           }, 
           error: (err) => this.errorMessage = err.message
         });

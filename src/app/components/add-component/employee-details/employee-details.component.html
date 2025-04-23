@@ -79,12 +79,12 @@
     <!-- EDIT MODE -->
     <div *ngIf="isEditing" class="employee-edit">
         <h2>Edit Employee Details</h2>
-        <form [formGroup]="employeeForm" ((submit))="onSubmit()">
+        <form [formGroup]="employeeForm" (submit)="onSubmit()">
             <label>Full Name:</label>
             <input formControlName="name" type="text">
 
             <label>Email:</label>
-            <input formControlName="emailId" type="email">
+            <input formControlName="emailId" type="email" [disabled]="true">
 
             <label>Phone Number:</label>
             <input formControlName="phone" type="text">

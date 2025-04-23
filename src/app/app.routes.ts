@@ -22,6 +22,7 @@ import { AllCyclesComponent } from './components/employe-interface/all-cycles/al
 import { PaymentMethodComponent } from './components/employe-interface/payment-method/payment-method.component';
 import { CustomerDetailsComponent } from './components/employe-interface/customer-details/customer-details.component';
 import { AuthGuardService as AuthGuard  } from './services/auth/auth-guard.service';
+import { OrderTrackingComponent } from './components/admin-inventory/order-tracking/order-tracking.component';
 
 
 export const routes: Routes = [
@@ -39,7 +40,8 @@ export const routes: Routes = [
             { path: 'staffPersonal', component: EmployeePersonalDetailComponent},
             { path: 'reports', component: ReportsComponent},
             { path: 'addCycleInventory', component:CycleInventoryComponent},
-            { path: 'addCycleCategory', component: AddCategoryComponent}
+            { path: 'addCycleCategory', component: AddCategoryComponent},
+            { path: 'tracking/:orderId', component: OrderTrackingComponent},
           ],
           canActivate: [AuthGuard]
     },

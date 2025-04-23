@@ -1,0 +1,262 @@
+.tracking-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .tracking-body{
+        height: 84vh;
+        width: 98%;
+        background-color: #1A1818;
+        border: 2px solid #BDBDBD;
+        border-radius: 20px;
+        font-family: "Strait";
+        padding: 20px;
+        
+        .orderId{
+            display: flex;
+            justify-content: space-between;
+            h2{
+                font-size: 26px;
+            }
+            span{
+                color: red;
+            }    
+        }
+
+        .order-details{
+            display: flex;
+            gap: 40px;
+            margin-top: 20px;
+            font-size: 18px;
+
+            .estimated-date{
+                display: flex;
+                align-items: center;
+                color: #12B76A;
+                font-family: "inter";
+                img{
+                    width: 20px;
+                    height: 20px;
+                    margin-right: 10px;
+                }
+            }
+
+        }   
+
+        .progress-track{
+            padding: 0 8%;
+
+            #progressbar {
+                margin-bottom: 3vh;
+                overflow: hidden;
+                color: white;
+                padding-left: 0px;
+                margin-top: 3vh;
+            }
+
+            #progressbar li {
+                list-style-type: none;
+                font-size: 0.8rem;
+                width: 25%;
+                float: left;
+                position: relative;
+                font-weight: 400;
+                color: white;
+            }
+
+            #progressbar #step1:before {
+                content: "";
+                color: white;
+                width: 20px;
+                height: 20px;
+                margin-left: 0px !important;
+            }
+            
+            #progressbar #step2:before {
+                content: "";
+                color: #fff;
+                width: 20px;
+                height: 20px;
+                margin-left: 0px !important;
+            }
+            
+            #progressbar #step3:before {
+                content: "";
+                color: #fff;
+                width: 20px;
+                height: 20px;
+                margin-left: 0px !important;
+            }
+            
+            #progressbar #step4:before {
+                content: "";
+                color: rgb(151, 149, 149, 0.651);
+                width: 20px;
+                height: 20px;
+                margin-left: 0px !important;
+            }
+            
+            #progressbar li:before {
+                line-height: 29px;
+                display: block;
+                font-size: 12px;
+                background: rgb(151, 149, 149);
+                border-radius: 50%;
+                margin: auto;
+                z-index: -1;
+                margin-bottom: 1vh;
+            }
+            
+            #progressbar li:not(:last-child)::after {
+                content: '';
+                height: 3px;
+                background: rgb(151, 149, 149, 0.651);
+                position: absolute;
+                left: 0%;
+                right: 0%;
+                margin-bottom: 2vh;
+                top: 8px;
+                z-index: 1;
+            }
+            .progress-track{
+                padding: 0 8%;
+            }
+            // #progressbar li:nth-child(2):after {
+            //     margin-right: auto;
+            // }
+            
+            // #progressbar li:nth-child(1):after {
+            //     margin: auto;
+            // }
+            
+            // #progressbar li:nth-child(3):after {
+            //     float: left;
+            //     // width: 68%;
+            // }
+            // #progressbar li:nth-child(4):after {
+            //     // margin-left: auto;
+            //     // width: 132%;
+            // }
+            
+            #progressbar li.active:before,
+            #progressbar li.active:after {
+                background: #12B76A;
+            }
+        }
+        
+        .order-items{
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            
+            height: 300px;
+            overflow-y: scroll;
+
+            .order-item{
+                display: flex;
+                border-radius: 10px;
+                align-items: center;
+
+                padding: 10px;
+                width: 50%;
+                height: 100px;
+                h3{
+                    color: grey;
+                }
+                h2{
+                    color:rgb(4, 233, 4)
+                }
+                .order-item-img{
+                    width: 20%;
+                    height: 80%;
+                    border-radius: 10px;
+                    margin-right: 20px;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
+                }
+
+                .order-item-details{
+                    display: flex;
+                    flex-direction: column;
+                    // gap: 10px;
+                    justify-content: center;
+                    width: 100%;
+                    
+                    .order-item-details-1{
+                        display: flex;
+                        // gap: 20px;
+
+                        h3{
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            text-align: center;
+                            border-right: 2px solid grey;
+                        }
+                    }
+                }
+                .amount{
+                    width: 30%;
+                }
+            }
+        }  
+        
+        .order-payment{
+            margin-top: 3%;
+            margin-left: 2%;
+            display: flex;
+            gap: 10%;
+            
+
+            .order-payment-details{
+                width: 50%;
+                height: fit-content;
+                color: #667085;
+                background-color: white;
+                padding: 10px;
+                border-radius: 20px;
+                display: flex;
+                justify-content: space-around;
+
+                h2{
+                    color: black;
+                }
+                .delivery-details{
+                    width: 30%;
+                    h4{
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        white-space: normal;
+                        overflow-wrap: break-word;
+                    }
+                }
+            }
+
+            .order-summary{
+                width: 30%;
+                height: 100%;
+                padding: 10px;
+                border-radius: 20px;
+                border: 2px solid red;
+                background-color: black;
+
+                h2{
+                    color: rgb(20, 255, 20)
+                }
+                .order-summary-details{
+                    display: flex;
+                    justify-content: space-between;
+                    margin: 10px;
+                }
+
+
+            }
+        }
+
+        
+    }     
+}

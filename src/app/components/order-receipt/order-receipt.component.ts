@@ -16,7 +16,12 @@ export class OrderReceiptComponent {
   get totalAmount(): number {
     return this.orderData?.items?.reduce((sum: number, item: any) => sum + item.total, 0) || 0;
   }
+
   close(){
    this.closeReceipt.emit();
+  }
+
+  printOrder(){
+    window.print();
   }
 }

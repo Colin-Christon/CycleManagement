@@ -52,7 +52,7 @@
                     <td>{{ order.trackingCode }}</td>
                     <td>{{ order.orderDate | date }}</td>
                     <td>
-                    <!-- <button (click)="editOrder(order)">✏️</button> -->
+                 <button (click)="printOrder(order)">🖨️</button>
                     <button (click)="viewOrder(order)">👁️</button>
                     </td>
                 </tr>
@@ -61,9 +61,7 @@
             </div>
         </div>
 
-      <div *ngIf="viewOrderDetails" class="overlay">
-
-      
+      <div *ngIf="viewOrderDetails" class="overlay">  
         <div  id="print-section" class="viewOrder">
           <app-order-receipt [orderData]="selectedOrder" 
           (closeReceipt)="viewOrderDetails = false"
