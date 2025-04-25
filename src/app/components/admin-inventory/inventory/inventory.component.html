@@ -28,62 +28,37 @@
           
                 <!-- Filters Section -->
                 <div class="filters">
-                  <!-- <form>
+                
+                  <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
                     <label for="category">Category:</label>
-                    <select id="category">
+                    <select id="category" formControlName="category">
                       <option value="all">All</option>
-                      <option *ngFor="let category of categories" [value] = "category.categoryId"> {{category.categoryName}} </option>
-                     
+                      <option *ngFor="let category of categories" [value]="category.categoryId">
+                        {{ category.categoryName }}
+                      </option>
                     </select>
-            
+                  
                     <label for="stock">Stock:</label>
-                    <select id="stock">
+                    <select id="stock" formControlName="stock">
                       <option value="all">All</option>
                       <option value="in-stock">In Stock</option>
                       <option value="out-of-stock">Out of Stock</option>
                     </select>
-            
+                  
                     <label>Piece / Item:</label>
-                    <input type="text" placeholder="Enter quantity" />
-            
+                    <input type="text" placeholder="Enter quantity" formControlName="quantity" />
+                  
                     <label>Price:</label>
                     <div class="price-range">
-                      <input type="number" placeholder="From Price" />
-                      <input type="number" placeholder="To Price" />
+                      <input type="number" placeholder="From Price" formControlName="priceFrom" />
+                      <input type="number" placeholder="To Price" formControlName="priceTo" />
                     </div>
-            
-                    <button class="filter-btn">Apply Filter</button>
-                </form> -->
-                <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
-                  <label for="category">Category:</label>
-                  <select id="category" formControlName="category">
-                    <option value="all">All</option>
-                    <option *ngFor="let category of categories" [value]="category.categoryId">
-                      {{ category.categoryName }}
-                    </option>
-                  </select>
-                
-                  <label for="stock">Stock:</label>
-                  <select id="stock" formControlName="stock">
-                    <option value="all">All</option>
-                    <option value="in-stock">In Stock</option>
-                    <option value="out-of-stock">Out of Stock</option>
-                  </select>
-                
-                  <label>Piece / Item:</label>
-                  <input type="text" placeholder="Enter quantity" formControlName="quantity" />
-                
-                  <label>Price:</label>
-                  <div class="price-range">
-                    <input type="number" placeholder="From Price" formControlName="priceFrom" />
-                    <input type="number" placeholder="To Price" formControlName="priceTo" />
-                  </div>
-                
-                  <button class="filter-btn" type="submit">Apply Filter</button>
-                  <button class="clear-btn" type="button" (click)="clearFilter()">Clear Filter</button>
-                </form>
                   
-              </div>
+                    <button class="filter-btn" type="submit">Apply Filter</button>
+                    <button class="clear-btn" type="button" (click)="clearFilter()">Clear Filter</button>
+                  </form>
+                  
+                </div>
               </div>
           
               <!-- Right Section: Product List -->

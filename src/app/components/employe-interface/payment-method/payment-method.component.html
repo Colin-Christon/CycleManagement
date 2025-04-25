@@ -15,6 +15,10 @@
                 <button [class.selected]="selectedOption === 'no'" (click)="setOption('no')">No</button>
                 <button [class.selected]="selectedOption === 'yes'" (click)="setOption('yes')">Yes</button>
             </div>
+            <div class="customer-name">
+                <h2>Name: </h2>
+                <h2 class="name">{{this.customer?.customerName}}</h2>
+            </div>
             <div class="delivery-address">
                 <div>{{this.customer?.address}}</div>
                 <button> Change</button>

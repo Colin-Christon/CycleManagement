@@ -43,93 +43,93 @@ $container-background : #1a1818;
         border: 2px solid white;
 
         .inventory-filters {
-        width: 30%;
-       height: 70vh;
-       padding: 30px;
-        .product-status {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-    
-            .status-box {
-            background: black;
-            padding: 10px;
-            border-radius: 12px;
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            flex: 1;
-            margin: 0 5px;
-    
-            span {
-                font-size: 14px;
-            }
-    
-            p {
-                font-size: 20px;
-                color: red;
-                margin: 5px 0 0;
-            }
-            }
-    
-        }
-    
-        .filters {
-            form{
+            width: 30%;
+            height: 70vh;
+            padding: 30px;
+            .product-status {
                 display: flex;
-                flex-direction: column;
-                gap: 20px;
-            
-           
-    
-                label {
-                margin-top: 10px;
-                font-size: 22px;
-                }
-    
-                select,
-                input[type='text'],
-                input[type='number'] {
-                    padding: 8px;
-                    font-size: 20px;
-                    background: #141416;
-                    border: 1px solid #333;
-                    border-radius: 8px;
-                    color: #ffffff;
-                }
-    
-                .price-range {
-                    display: flex;
-                    gap: 10px;
+                justify-content: space-between;
+                margin-bottom: 20px;
         
-                    input {
-                        width: 50%;
-                    }
+                .status-box {
+                background: black;
+                padding: 10px;
+                border-radius: 12px;
+                display: flex;
+                justify-content: space-between;
+                text-align: center;
+                flex: 1;
+                margin: 0 5px;
+        
+                span {
+                    font-size: 14px;
                 }
-    
-                .filter-btn, .clear-btn {
-                    background: rgb(60, 253, 60);
-                    color:black;
-                    padding: 10px;
-                    border: none;
-                    border-radius: 20px;
-                    cursor: pointer;
-                    // transition: border 1s ease-in-out;
-
-                    // &:hover {
-                    //     border: 2px solid red;
-                    // }
+        
+                p {
+                    font-size: 20px;
+                    color: red;
+                    margin: 5px 0 0;
                 }
-
-                .clear-btn{
-                    color: white;
-                    background-color: black;
-                    border: 2px solid red;
                 }
+        
+            }
+        
+            .filters {
+                form{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                
             
+        
+                    label {
+                    margin-top: 10px;
+                    font-size: 22px;
+                    }
+        
+                    select,
+                    input[type='text'],
+                    input[type='number'] {
+                        padding: 8px;
+                        font-size: 20px;
+                        background: #141416;
+                        border: 1px solid #333;
+                        border-radius: 8px;
+                        color: #ffffff;
+                    }
+        
+                    .price-range {
+                        display: flex;
+                        gap: 10px;
+            
+                        input {
+                            width: 50%;
+                        }
+                    }
+        
+                    .filter-btn, .clear-btn {
+                        background: rgb(60, 253, 60);
+                        color:black;
+                        padding: 10px;
+                        border: none;
+                        border-radius: 20px;
+                        cursor: pointer;
+                        // transition: border 1s ease-in-out;
+
+                        // &:hover {
+                        //     border: 2px solid red;
+                        // }
+                    }
+
+                    .clear-btn{
+                        color: white;
+                        background-color: black;
+                        border: 2px solid red;
+                    }
+                
+                }
             }
         }
-    }
     
         .inventory-list {
      
@@ -139,7 +139,7 @@ $container-background : #1a1818;
             padding: 20px;
             border-radius: 12px;
 
-            max-height: 900px; /* Adjust height based on your layout */
+            max-height: 900px; 
             overflow-y: auto; 
 
         table {
@@ -191,4 +191,66 @@ $container-background : #1a1818;
         }
     }
       
+}
+
+@media ( max-height:800px){
+    .inventory-container{
+        width: 98%;
+
+        button{
+            font-family: "Strait";
+            font-size: 14px;
+          }
+
+        .inventory-header {
+            margin-bottom: 10px;
+            h2 {
+                font-size: 24px;
+            }
+        }
+
+        .inventory-content{
+            height: 68vh;
+            width: 100%;
+            .inventory-filters{
+                height:100px;
+                
+                .filters{
+                    form{
+                        gap: 5px;
+                        label {
+                            font-size: 14px;
+                        }
+    
+                        select,
+                        input[type='text'],
+                        input[type='number'] {
+                            padding: 5px;
+                            font-size: 14px;
+                        }
+    
+                        .filter-btn, .clear-btn {
+                            font-size: 14px;
+                            padding: 5px;
+                        }
+                    }
+                }
+            }
+
+            .inventory-list{
+                width: 70%;
+                max-height: 90%;
+             
+                table{
+                    th,td{
+                        padding: 10px;
+                        font-size: 12px;
+                      }
+                      td{
+                        height: 50%;
+                      }
+                }
+            }
+        }
+    }
 }

@@ -58,7 +58,7 @@ $container-background : #1a1818;
     }
   
     .table-wrapper {
-      max-height: 700px;
+      max-height: 87%;
       overflow-y: auto;
     }
     tbody tr:nth-child(even) {
@@ -141,4 +141,32 @@ $container-background : #1a1818;
     }
   }
   
-  
+@media (max-height:800px){
+  .orders-container{
+    height: 78vh;
+    h2{
+      font-size: 24px;
+    }
+
+    button{
+      font-size: 14px;
+    }
+
+    .filters{
+      input,select{
+        font-size: 12px;
+      }
+    }
+
+    .table-wrapper{
+      max-height: 75%;
+
+      th,td{
+        font-size: 12px;
+      }
+      td{
+        height: 50%;
+      }
+    }
+  }
+}

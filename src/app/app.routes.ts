@@ -27,7 +27,7 @@ import { OrderTrackingComponent } from './components/admin-inventory/order-track
 
 export const routes: Routes = [
     {path:"",redirectTo:'/login',pathMatch:"full"},
-    {path:"register",component:UserRegisterComponent},
+    {path:"register",component:UserRegisterComponent, canActivate: [AuthGuard]},
     {path:"login", component:UserLoginComponent},
     {path:"editEmployee/:userId", component: EmployeeDetailsComponent},
     {path:"admin",component:AdminInventoryComponent,

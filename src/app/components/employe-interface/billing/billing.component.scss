@@ -200,12 +200,7 @@
                             width: 35px;
                         }
                     }
-                    
-                    
-                   
-                        
-
-                    
+                       
 
                 }
                 button{
@@ -309,3 +304,145 @@
 
 }
 
+
+@media (max-height:800px){
+    .billing-container{
+        .billing-container-top{
+            margin-top: -10px;
+            h2{
+                font-size: 30px;
+            }
+            p{
+                font-size: 16px;
+            }
+           .cycle-desc-back{
+            img{
+                height: 30px;
+            }
+            h1{
+                font-size: 30px;
+            }
+           }
+        }
+
+        .billing-body{
+            height: 400px;
+            .billing-body-top{
+                padding: 0px;
+                .title{
+                    h1{
+                        font-size: 20px;
+                    }
+
+                    h2{
+                        font-size: 18px;
+                    }
+                    .navbar-search{
+                        input{
+                            font-size: 16px;
+                        }
+                    }
+                    .search-results{
+                        width: 200px;
+                        height: 200px;
+                        top: 200px;
+                        right: 50px;
+                        div{
+                            height: 40px;
+                            font-size: 14px;
+                            h3{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+                .amount-title{
+                    position: relative;
+                    right: 20px;
+                    text-align: center;
+                }
+            }
+
+            .billing-body-middle{
+                .body-middle-1{
+                    .body-item{
+                        width: 90%;
+                        height: 60px;
+                        font-size: 14px;
+                        .body-item-inner-cover{
+                            .item-heading{
+                                width: 80%;
+                                div{
+                                    width: 100%;
+                                    h1{
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                            .body-item-data{
+                                width: 60%;
+                                margin-left: 0px;
+                                h4{
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                        .quantity{
+                            width: 20%;
+                            img{
+                                height: 25px ;
+                                width: 25px;
+                            }
+                        }
+                    }
+
+                    button{
+                        width: 30%;
+                        img{
+                            height: 25px ;
+                            width: 25px;
+                        }
+                    }
+                }
+
+                .body-middle-2{
+                    .body-item-price{
+                        height: 80px;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .billing-end{
+                height: 50px;
+
+                .billing-end-1{
+                    h1{
+                        font-size: 20px;
+                    }
+                }
+                .billing-end-2{
+                    h1{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .billing-checkout-btn{
+            label{
+                font-size: 16px;
+            }
+            input{
+                height: 40px;
+                width: 200px;
+                font-size: 16px;
+            }
+            button{
+                font-size:30px ;
+                width: 150px;
+                height: 50px;
+            }
+        }
+    }
+}

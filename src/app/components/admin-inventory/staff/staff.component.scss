@@ -14,7 +14,9 @@
         color: #ffffff;
         background: #121212;
         padding: 20px;
-      
+        border: 2px solid grey;
+        border-radius: 20px;
+
         .staff-header {
           display: flex;
           justify-content: space-between;
@@ -62,10 +64,11 @@
         }
       
         .staff-table-container {
-          max-height: 400px;
+          height: 73vh;
           overflow-y: auto;
       
           .staff-table {
+            max-height: 72vh;
             width: 100%;
             border-collapse: collapse;
             th{
@@ -97,8 +100,7 @@
             }
           }
         }
-      }
-      
+      }     
 }
 
 .confirmation-dialog{
@@ -148,4 +150,37 @@
         cursor: pointer;
       }
     }
+}
+
+@media ( max-height:800px){
+  .staff-container{
+    padding: 10px;
+    color: white;
+    font-family: "strait";
+
+    h2{
+      font-size: 24px;
+    }
+    button{
+      font-family: "Strait";
+      font-size: 14px;
+    }
+
+    .staff-management{
+      .staff-table-container{
+        height: 380px;
+
+        .staff-table{
+         max-height: 380px;
+         
+          th,td{
+            font-size: 12px;
+          }
+          td{
+            height: 50%;
+          }
+        }
+      }
+    }
+  }
 }

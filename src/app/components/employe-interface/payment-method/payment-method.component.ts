@@ -30,7 +30,7 @@ export class PaymentMethodComponent implements OnInit{
     this.customer = this.customerService.getCustomer();
 
     this.productAmount = this.getTotalAmount();
-    console.log(this.cycles);
+    console.log(this.customer);
   }
 
   getTotalAmount(): number {

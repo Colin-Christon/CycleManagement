@@ -29,7 +29,7 @@
           
               h3 {
                 margin-bottom: 20px;
-                font-size: 28px;
+                font-size: 40px;
               }
           
               .profile-image {
@@ -39,7 +39,7 @@
                 align-items: center;
                 img {
                   width: 100%;
-                  height: 400px;  
+                  height: 600px;  
                 //   border-radius: 50%;
                   border: 3px solid #23f59a;
                   border-radius: 20px;
@@ -93,7 +93,7 @@
           
               h3 {
                 margin-bottom: 15px;
-                font-size: 28px;
+                font-size: 40px;
               }
           
               .details-container {
@@ -182,4 +182,60 @@ button:first-child {
 button:last-child {
     background: #dc3545;
     color: white;
+}
+
+@media(max-height:800px){
+    .employee-container{
+      button{
+        font-family: "Strait";
+        font-size: 14px;
+      }
+
+      .employeee-container{
+        .employee-profile{
+          .profile-section{
+            h3{
+              font-size: 20px;
+            }
+
+            .profile-image{
+              img{
+                height: 300px;
+              }
+            }
+          }
+
+          .details-section{
+            h3{
+              font-size: 20px;
+            }
+            .details-container{
+              .detail-item{
+                label{
+                  font-size: 14px;
+                }
+                span{
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+        }
+      }
+  
+
+
+    .employee-edit{
+      padding: 0px;
+      margin-top: -20px;
+      
+        label {
+            font-size: 14px;
+        }
+
+        input{
+            font-size: 12px;
+        }
+    }
+  }
 }

@@ -78,8 +78,8 @@
 
     <!-- EDIT MODE -->
     <div *ngIf="isEditing" class="employee-edit">
-        <h2>Edit Employee Details</h2>
-        <form [formGroup]="employeeForm" (submit)="onSubmit()">
+        <h3>Edit Employee Details</h3>
+        <form [formGroup]="employeeForm" >
             <label>Full Name:</label>
             <input formControlName="name" type="text">
 
@@ -109,7 +109,7 @@
             <label>Shift End Timing:</label>
             <input formControlName="shiftEndTime" type="time">
 
-            <button type="submit">Update</button>
+            <button (click)="onSubmit()">Update</button>
             <button  (click)="toggleEdit()">Cancel</button>
         </form>
     </div>

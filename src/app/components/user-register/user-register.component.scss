@@ -150,7 +150,62 @@
   }   
 }
 
+@media (max-height:800px){
+  .register-container{
+    .register-right{
+      width: 500px;
+    }
 
+    .register-content{
+      .register-heading{
+        h1{
+          font-size: 40px;
+        }
+      }
+
+      form{
+        .form-div{
+          gap: 10px;
+          font-size: 20px;
+          margin: 10px;
+          .form-div-content{
+            input, select{
+              width: 200px;
+              height: 30px;
+              font-size: 16px;
+            }
+          }
+
+          .form-radio{
+            .radio-options{
+              font-size: 20px ;
+              gap: 10px;
+              div{
+                input[type='radio']{
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+            }
+          }
+        }
+
+        .form-agree{
+          font-size:18px ;
+        }
+        .form-register{
+          .form-register-btn{
+            button{
+              width: 150px;
+              height: 50px;
+              font-size: 18px ;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 
 

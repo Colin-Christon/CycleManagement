@@ -2,7 +2,6 @@
     background-color: black;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
     color: white;
 
     .cycle-desc-back{
@@ -45,7 +44,7 @@
             }
 
             .delivery-options{
-                width: 50%;
+                width: 40%;
                 button{
                     height: 70px;
                     width: 120px;
@@ -64,6 +63,15 @@
                 border-color: red;
                 // background-color: red;
                 color: red;
+              }
+
+              .customer-name{
+                height: 150px;
+                width: 10%;
+                .name{
+                    font-size: 28px;
+                    color:  greenyellow;
+                }
               }
 
             .delivery-address{
@@ -224,13 +232,97 @@
                     border: 2px solid rgb(26, 235, 26) ;
                 }
               }
-          }
-          
-        
-          
-        
-          
+          }            
     }
+}
 
+@media(max-height:800px){
+    .payment-method-container{
+        .cycle-desc-back{
+            img{
+                height: 30px;
+            }
+            h1{
+                font-size: 30px;
+            }
 
+            .checkout-title{
+                font-size: 30px;
+            }
+        }
+
+        .payment-method-body{
+            .payment-body-delivery{
+                height: 100px;
+                .title{
+                    font-size: 18px;
+                }
+                .delivery-options{
+                    button{
+                        height: 50px;
+                        width: 100px;
+                        font-size: 30px;
+                    }
+                }
+                .customer-name{
+                    height: 100px;
+                    .name{
+                        font-size: 20px;
+                    }
+                }
+                .delivery-address{
+                    div{
+                        height: 100px;
+                        width: 180px;
+                        font-size: 20px;
+                    }
+                    button{
+                        margin-left: -40px;
+                    }
+                }
+            }
+
+            .payment-method{
+                div{
+                   font-size: 18px;
+                    .method-options{
+                        li{
+                            font-size: 18px;
+                            label{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                    .payment-button{
+                        button{
+                            width: 250px;
+                            height: 60px;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .order-summary{
+                    height: 300px;
+                    width: 300px;
+                    h2{
+                        font-size: 24px;
+                    }
+                    
+                    h4{
+                        margin-top: -10px;
+                        margin-left: 10px;
+                        font-size: 14px;
+                    }
+                    div{
+                        h5{
+                            font-size: 18px;
+                        }
+                        
+                    }
+
+                }
+            }
+        }
+    }
 }

@@ -1,19 +1,25 @@
 .admin-navbar {
     width: 200px;
     height: 96vh;
+
     background-color: #1A1818;
     color: #ecf0f1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding: 20px;
+    // padding-bottom: 30px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     position: relative;
     top: 0;
     left: 0px;
     box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
-  
+    overflow-y: auto;
+
+   
+
     .company-logo{
       height: 14%;
       margin-top: 10px;
@@ -22,31 +28,38 @@
       align-items: start;
       gap: 10px;
       img{
-        width: 72px;
-        height: 65px;
+        width: 5vw;   
+        height: auto;
+        max-width: 60px;
       }
       h3{
         font-family: 'sarina';
-        font-size: 28px;
+        font-size: 22px;
       }
     }
 
     .nav-items{
+      // width: 100%;
+      height: 70%;
         .item{
-          height: 8%;
+          height: 7%;
           margin-top: 15px;
-          padding: 10px;
+          // padding: 10px;
+          padding: 0.4rem 0.8rem;
           display: flex;
           align-items: center;
           gap: 10px;
           border-radius: 10px;
+          width: 100%;         // ensures it fills the parent container
+          max-width: 250px;  
           img{
-            width: 65px;
-            height: 65px;
+            width: 3vw;   
+            height: auto;
+            max-width: 60px;
           }
           h3{
             font-family: 'strait';
-            font-size: 24px;
+            font-size: 1.2rem;
           }
 
           &:hover{
@@ -61,7 +74,9 @@
 
     .logout{
       width: 120px;
+      // height: 10%;
       height: 86px;
+      // min-height: 40px;     
       border-radius: 20px;
       padding: 10px;
       display: flex;
@@ -73,13 +88,26 @@
         cursor: pointer;
       }
       img{
-        width: 34px;
-        height: 34px;
+       
+        width: 3vw;
+        height: auto;
+        max-width: 60px;
       }
-      h1{
+      h2{
         font-family: 'wallpoet';
         color: black;
       }
     }
+  }
+
+  @media (max-height: 800px) {
+    .admin-navbar{
+      height: 93vh;
+
+      .logout{
+        height: 63px;
+      }
+    }
+   
   }
   

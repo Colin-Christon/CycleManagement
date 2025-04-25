@@ -113,4 +113,41 @@
       }
     }   
   }
-  
+
+  @media ( max-height: 800px) {
+    .login-container{
+      .login-right{
+        width: 500px;
+      }
+      .login-content{
+        .login-heading{
+          h1{
+            font-size: 40px;
+          }
+        }
+
+        .login-form{
+          form{
+            width: 300px;
+            div{
+              label{
+                font-size: 20px;
+              }
+              input{
+                height: 40px;
+                font-size: 15px;
+              }
+            }
+
+            .login-button{
+              button{
+                width: 150px;
+                height: 50px;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }

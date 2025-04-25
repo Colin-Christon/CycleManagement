@@ -1,6 +1,7 @@
 .upi-container{
     color: white;
     display: flex;
+    align-items: center;
 
     .container-left{
         width: 50%;
@@ -8,6 +9,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         // background-color: red;
 
         h1{
@@ -19,6 +21,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             text-align: center;
 
             span{
@@ -54,25 +57,25 @@
                 color: red;
           
             }
-        .container-left-top{
-            height: max-content;
-            display: flex;
-            flex-direction: row;
-
-           
-
-            div{
+            .container-right-top{
                 height: max-content;
-                color: black;
+                display: flex;
+                flex-direction: row;
+
+            
+
+                div{
+                    height: max-content;
+                    color: black;
+                    
                 
-               
-                h5{
-                    margin-top: -30px;
+                    h5{
+                        margin-top: -30px;
+                    }
                 }
             }
-        }
 
-        .container-left-bottom{
+        .container-right-bottom{
             color: black;
             height: fit-content;
             width: fit-content;
@@ -149,8 +152,8 @@
           }
 
           .modal-content button {
-            height: 100%;
-            width: 30%;
+            height: 40%;
+            width: 20%;
             margin: 10px;
             padding: 10px 20px;
             font-family: "strait";
@@ -167,5 +170,67 @@
             }
           }
       }
+    }
+}
+
+@media (max-height:800px){
+    .upi-container{
+        .container-left{
+            h1{
+                font-size: 30px;
+            }
+            img{
+                height: 200px;
+                width: 200px;
+            }
+        }
+        .container-right{
+            div{
+                width: 60%;
+                height: fit-content;
+                font-size: 20px;
+                h4{
+                    font-size: 20px;
+                }
+                .container-right-top{
+                    width: 100%;
+                    div{
+                        width:50%;
+                        h5{
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+                .container-right-bottom{
+                    div{
+                        div{
+                            input{
+                                width: 300px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .payment-status{
+                button{
+                    font-size: 20px;
+                }
+            }
+
+            .modal-overlay{
+                .modal-content {
+                    width: 40%;
+                    height: 40%;
+                    font-size: 20px;
+                }
+                .modal-content button {
+                    width: 100px;
+                    height: 50px;
+                    font-size: 20px;
+                }
+            }
+        }
     }
 }

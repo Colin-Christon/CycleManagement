@@ -21,6 +21,7 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 20px; 
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .cycle-box {
@@ -34,6 +35,7 @@
     border : 1px solid grey;
     font-family: 'wallpoet';
     color: white;
+
     .name{
         margin-top: 20px;
         display: flex;
@@ -49,7 +51,7 @@
     width: 100%;
     height: auto;
     max-height: 150px;
-    object-fit: contain; /* Keeps aspect ratio */
+    object-fit: contain;
     border-radius: 5px;
 }
 
@@ -67,5 +69,36 @@
 
     span{
         color: red;
+    }
+}
+
+@media(max-height:800px){
+    .all-cycle-container{
+        .cycle-desc-back{
+            img{
+                height: 30px;
+            }
+        }
+
+        .all-cycles{
+            .cycle-box{
+                height: 200px;
+                
+                .name{
+                    height: 10px;
+                    align-items: center;
+                    h3{
+                        font-size: 1.1rem;
+                    }
+                }
+
+                h2{
+                    font-size: 1.3rem;
+                }
+            }
+            .cycle-box img {
+                max-height: 100px;
+            }
+        }
     }
 }

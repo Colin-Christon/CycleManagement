@@ -18,7 +18,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      // font-family: 'strong';
+
       h3 {
          width: 100%;  
          max-width: 100%;
@@ -166,4 +166,97 @@
  @page {
    size: 'A4'; 
    margin: 10mm; 
+ }
+
+ @media(max-height:800px){
+   .payment-success-container{
+      button{
+         font-size: 18px;
+      }
+
+      .container-left{
+         width: 40%;
+         div{
+            div{
+               img{
+                  width: 250px;
+                  height: 250px;
+               }
+               h3{
+                  font-size: 30px;
+               }
+            }
+            h3{
+               font-size: 20px;
+            }
+         }
+      }
+
+      .container-right{
+        
+
+         .container-right-1{
+            .container-right-middle{
+            
+               .middle-status{
+                  div{
+                     height: 50px;
+                     align-items: center;
+                     h4{
+                        font-size: 24px;
+                     }
+                     h5{
+                        font-size: 22px;
+                     }
+                  }
+                  .status{
+                     font-size: 18px;
+                  }
+                  img{
+                     width: 30px;
+                     height: 30px;
+                  }
+               }
+               .payment-status{
+                  h4{
+                     font-size: 24px;
+                     margin-bottom: 50px;
+                  }
+                  h5{
+                     font-size: 22px;
+                  }
+               }
+   
+               .middle-order-status{
+                  h4{
+                     font-size: 24px;
+                     margin-bottom: 50px;
+                  }
+                  h5{
+                     font-size: 22px;
+                  }
+               }   
+            }
+
+            .container-right-bottom{
+               div{
+                  button{
+                     width: 200px;
+                     font-size: 22px;
+                  }
+               }
+            }
+
+            .container-next{
+               font-size: 20px;
+               img{
+                  width: 80px;
+                  height: 80px;
+               }
+            }
+   
+         }
+         
+      }
+   }
  }

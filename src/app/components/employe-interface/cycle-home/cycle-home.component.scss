@@ -67,9 +67,42 @@
             &:hover{
                 cursor: pointer;
             }
+        }      
+    }
+}
+
+@media(max-height: 800px){
+    .cycle-home-container{
+        .cycle-category{
+            font-size: 14px;
         }
 
-        
-    }
+        .home-image{
+            img{
+                width: 60%;
+                height: 250px;
+            }
+        }
 
+        .all-cycles{
+            width: 85%;
+            h2{
+                font-size: 20px;
+            }
+
+            .ind-cycle{
+                width: 160px;
+                height: 200px;
+                
+                img{
+                    height: 100px;
+                    width: 120px;
+                }
+
+                h4{
+                    margin-top: -10px;
+                }
+            }
+        }
+    }
 }

@@ -68,7 +68,7 @@
                             <img *ngIf="imagePreview; else iconTemplate" [src]="'data:image/png;base64,' + imagePreview" />
                             
                             <ng-template #iconTemplate class="upload">
-                                <img src="/assets/icons/up-loading.png" alt="">
+                                <img src="/assets/icons/up-loading.png" alt="" class="upload-icon">
                                 <p>Upload Image</p>
                             </ng-template>
                         

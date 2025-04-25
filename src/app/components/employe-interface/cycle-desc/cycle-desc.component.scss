@@ -37,7 +37,6 @@
         .cycle-desc-content-body{
             // width: 90vh;
             display: flex;
-            // justify-content: space-evenly;
             justify-content: space-evenly;
             align-items: center;
             img{
@@ -139,6 +138,99 @@
             }
         }
     }
+}
 
+@media(max-height:800px){
+    .cycle-desc-container{
+        .cycle-desc-back{
+            img{
+                height: 30px;
+            }
+            h1{
+                font-size: 30px;
+            }
+        }
 
+        .cycle-desc-content{
+            .cycle-desc-heading{
+                h1{
+                    font-size: 20px;
+                }
+                span{
+                    font-size: 30px;
+                }
+            }
+
+            .cycle-desc-content-body{
+                img{
+                    width: 350px;
+                    height: 300px;
+                }
+                .cycle-desc-content-right{
+                    h3{
+                        font-size: 20px;
+                    }
+                    h1{
+                        font-size: 30px;
+                    }
+                    .star-rating{
+                        margin-top: -20px;
+                        .star-rating {
+                            font-size: 1.5rem;
+                          }
+                      }
+                    .mrp{
+                        margin-top: 20px;
+                        h1{
+                            font-size: 24px;
+                            color: yellowgreen;
+                        }
+                        p{
+                            font-size: 14px;
+                            margin-top: 5px;
+                        }
+                            font-size: 14px;
+                    }
+
+                    .color{
+                        div{
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                
+                      .next-button{
+                        width: 150px;
+                        height: 40px;
+                        font-size: 18px;
+                        &:hover{
+                            background-color: #ffd700;
+                            color: black;
+                        }
+                    }
+                }
+            }
+
+            .cycle-desc-footer{
+                width: 50%;
+                position: relative;
+                bottom: 50px;
+                display: flex;
+                margin-left: 50px;
+                h1{
+                    font-size: 16px;
+                }
+                h3{
+                    font-size: 16px;
+                }
+                div{
+                    margin-right: 20px;
+                    div{
+                        width:40px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
 }

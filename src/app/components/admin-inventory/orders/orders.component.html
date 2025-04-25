@@ -7,20 +7,20 @@
         
             <!-- Filters -->
             <div class="filters">
-            <input
-                type="text"
-                placeholder="Search Order ID..."
-                [(ngModel)]="orderId"
-            />
-            <button (click)="searchOrder()">Search</button>
-        
-            <select [(ngModel)]="orderStatus" (change)="filterByStatus()">
-                <option value="">All Status</option>
-                <option value="Pending">Pending</option>
-                <option value="Shipped">Shipped</option>
-                <option value="Delivered">Delivered</option>
-                <option value="Cancelled">Cancelled</option>
-            </select>
+                <input
+                    type="text"
+                    placeholder="Search Order ID..."
+                    [(ngModel)]="orderId"
+                />
+                <button (click)="searchOrder()">Search</button>
+            
+                <select [(ngModel)]="orderStatus" (change)="filterByStatus()">
+                    <option value="">All Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
             </div>
         
             <!-- Orders Table -->

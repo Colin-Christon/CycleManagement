@@ -173,4 +173,61 @@ $container-background : #1a1818;
       } 
     } 
   }
-  
+
+@media (max-height:800px){
+  .dashboard{  
+    .info-cards{
+      margin-top: 10px;
+      .info-card{
+        height: 90px;
+        div{
+          h1{
+            font-size: 20px;
+          }
+          img{
+            width: 30px;
+            height: 30px;        
+          }
+          h2{
+            font-size: 18px;
+          }
+        }
+        h3{
+          height: 20px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .dashboard-graphs{
+      height: 170px;
+      width: 100%;
+      margin-top: 10px;
+      margin-left: -30px;
+      .chart-box{
+        height: 100%;
+      }
+      canvas {
+        height: 120px !important; 
+      }
+    }
+
+    .popular-cycles{
+      margin-top: 20px;
+      .report-wrapper{
+        button{
+          width: 150px;
+          height: 50px;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .popular-container{
+      h1{
+        padding: 5px;
+        font-size: 18px;
+      }
+    }
+  }
+}
